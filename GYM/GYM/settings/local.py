@@ -1,4 +1,4 @@
-from .base import *
+from base import Path
 
 """
 MODIFICACIONES PARA EL USO DE DESARROLLO
