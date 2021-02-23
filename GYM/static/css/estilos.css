@@ -1,0 +1,39 @@
+/* ESTILOS PROPIOS */
+
+/* PLANTILLA BASE */
+/* Este es para hacer el fondo negro*/
+body{
+	background: #343a40;
+}
+
+
+/* Header */
+/* Este es para el agregar el estilo de letra que descargue */
+@font-face {
+    font-family: 'Oi';
+    src: local('Oi-Regular'),
+    	url('../fonts/Oi-Regular.ttf');
+}
+
+#nombre{
+	font-family: 'Oi', cursive;
+	color: #fff52a;
+	letter-spacing: 3px;
+	text-align: right;
+	vertical-align: middle;
+}
+
+/* Botones en navbars */
+/* Ubico el contenedor con los botones a la derecha*/
+.container_btn{
+	right: 0px;
+}
+
+
+/* PLANTILLA REGISTRO */
+/* Contenedor del formulario */
+.container_form{
+	margin: 25px 50px 75px 100px;
+	padding: 70px;
+	background: #f8f9fa;
+}
