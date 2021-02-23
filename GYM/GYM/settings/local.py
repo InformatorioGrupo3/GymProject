@@ -52,11 +52,11 @@ TEMPLATES = [
 # DATABASES = {
 #     'default': {
         #'ENGINE': 'django.db.backends.mysql',
-        #'NAME': 'mydatabase', --> NOMBRE DE LA BASE YA CREADA
+        #'NAME': 'db_gym_patito', --> NOMBRE DE LA BASE YA CREADA
         #'USER': 'root',
-        #'PASSWORD': '',
+        #'PASSWORD': 'root',
         #'HOST': 'localhost',
-        #'PORT': '3600',
+        #'PORT': '3306',
 #     }
 # }
 
