@@ -48,18 +48,18 @@ TEMPLATES = [
 
 
 # Configuración de MySQL
-
+'''
  DATABASES = {
      'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db_gym_patito', # --> NOMBRE DE LA BASE YA CREADA
+        'NAME': 'db_gym_patito', --> NOMBRE DE LA BASE YA CREADA
         'USER': 'root',
-        'PASSWORD': 'Mysqlpass01',
+        'PASSWORD': 'root',
         'HOST': '',     # Vacío = localhost
         'PORT': '3306',
      }
  }
-
+'''
 
 
 LANGUAGE_CODE = 'es-ar'
