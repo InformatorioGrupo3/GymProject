@@ -54,7 +54,7 @@ TEMPLATES = [
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'db_gym_patito', --> NOMBRE DE LA BASE YA CREADA
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': '',
         'HOST': '',     # Vacío = localhost
         'PORT': '3306',
      }
