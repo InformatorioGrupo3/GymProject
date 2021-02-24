@@ -1,3 +1,5 @@
 __pycache__/
 .vscode/settings.json
-GYM/GYM/settings/
+GYM/GYM/settings/base.py
+GYM/GYM/settings/local.py
+GYM/GYM/settings/production.py
