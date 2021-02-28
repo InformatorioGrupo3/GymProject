@@ -1,5 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import registrar_cliente
+from .models import usuario
+from django.views.generic import CreateView
 
-# Create your views here.
 def registro(request):
-	return render(request, 'registro.html')
+	return registrar_cliente
+
+class registro_usuario(CreateView):
+	model = usuario
+	form_class = registrar_cliente
+	template_name = 'registro.html'
