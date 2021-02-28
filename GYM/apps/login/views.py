@@ -7,8 +7,8 @@
 
 
 from django.shortcuts import render
-#from GYM.apps.registro.models import usuario#
-from django import HttpResponse
+from apps.registro.models import usuario
+from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth import logout
 
