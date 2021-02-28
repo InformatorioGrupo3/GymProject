@@ -21,7 +21,7 @@ class actividades(models.Model):
     )
 
 
-class turno(models.Model, usuario):
+class turno(models.Model, usuario, actividades):
     usuario = models.ManyToManyField(usuario, on_delete=models.CASCADE)
     actividad = models.ForeignKey(actividades, on_delete=models.CASCADE)
     cupo = models.CharField(max_length=50)

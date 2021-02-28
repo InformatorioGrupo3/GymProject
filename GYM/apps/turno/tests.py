@@ -9,7 +9,6 @@ from .models import usuario
 var = usuario.objects.all()
 print(var)
 
-'''
 # Insercion 
 var = usuario()
 var.nombre = 'NombreX'
@@ -22,4 +21,3 @@ print(var.nombre) # Me muestra el nombre de dicho id
 # Eliminacion
 var = usuario.objects.get(id=1)
 var.delete
-'''
