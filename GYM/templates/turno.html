@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %}INICIO{% endblock titulo %}
+<!-- Los botones del Navbar cambian acá -->
+{% block botones %} {% endblock botones %}
+
+{% block contenido %} 
+
+<div>
+    <div>
+        <div>
+            <form action="turno.html" method="post">
+                <div>
+                    <form action="registrar" method="post"></form>
+                    <p>Actividad: </p>
+                    <p>Horarios disponibles: </p>
+                    <button type="submit">Confirmar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock contenido%}
