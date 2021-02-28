@@ -3,5 +3,5 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
 @login_required(redirect_field_name='inicio')
-def perfil(request):
-    return render(request, 'perfil.html') # Agregar HTML de perfil para cuando inicia sesion
+def inicio(request):
+    return render(request, 'inicio.html') # Agregar HTML de perfil para cuando inicia sesion

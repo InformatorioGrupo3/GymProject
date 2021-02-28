@@ -1,25 +1,15 @@
-
-
-
-
-# BORRAR APP LOGIN
-
-
-
-from django.shortcuts import render
-#from GYM.apps.registro.models import usuario#
-from django import HttpResponse
+from django.shortcuts import render, redirect
+from apps.registro.forms import registrar_cliente
+from apps.registro.models import usuario
 from django.contrib.auth import login
 from django.contrib.auth import logout
+from django.views.generic import CreateView
+from apps.registro.models import usuario
 
-# Create your views here.
-def login(request):
-    user = usuario.objects.get(nombre=request.POST['nombre'])
-    if user.contraseña == request.POST['contraseña']:
-        request.session['usuario_id'] = user.id
-        return HttpResponse("¡ Bienvenido !", 'index.html')
-    else:
-        return HttpResponse("Su usuario y contraseña no coinciden.")
+class login(CreateView):
+	model = usuario
+	form_class = registrar_cliente
+	template_name = 'login.html'
 
 def logout_view(request):
     logout(request)

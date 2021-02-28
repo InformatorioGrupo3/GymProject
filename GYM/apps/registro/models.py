@@ -4,8 +4,8 @@ from django.contrib.auth.models import User
 from django import forms
 
 class usuario(models.Model):
-    nombre = models.TextField(max_length=50, blank=False)
-    apellido = models.TextField(max_length=20, blank=False)
+    nombre = models.CharField(max_length=50, blank=False)
+    apellido = models.CharField(max_length=20, blank=False)
     edad = models.PositiveIntegerField()
     dni = models.CharField(max_length=9, unique=True, blank=False)
     contraseña = models.CharField(null=False, max_length= 20)
