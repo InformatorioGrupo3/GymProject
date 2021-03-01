@@ -33,7 +33,11 @@ body{
 /* PLANTILLA REGISTRO */
 /* Contenedor del formulario */
 .container_form{
-	margin: 25px 50px 75px 100px;
-	padding: 70px;
+	margin-top: 25px;
+    margin-right: 100px;
+    margin-bottom: 70px;
+    margin-left: 100px;
+	padding: 20px;
 	background: #f8f9fa;
 }
+

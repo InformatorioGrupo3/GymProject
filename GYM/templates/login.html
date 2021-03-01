@@ -8,5 +8,19 @@
 
 
 {% block contenido %} 
-<h1 class="text-danger"> NADA TODAVIA ACÁ</h1>
+<div class="container">
+	<div class="raw">
+		<div class="col-12 col-md-6 offset-md-3">
+			<div class="card">
+				<div class="card-body"> 
+					<form method="POST" class="form-group">
+						{% csrf_token %}
+						{{ form.as_p }}
+						<button type="submit" class="btn btn-success float-right">Ingresar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock contenido%}
