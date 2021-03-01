@@ -1,16 +1,23 @@
-from django.shortcuts import render, redirect
-from apps.registro.forms import registrar_cliente
-from apps.registro.models import usuario
-from django.http import HttpResponse
-from django.contrib.auth import login, authenticate
-from django.contrib.auth import logout
-from django.views.generic import CreateView
+from django.views.generic import FormView
+from django.contrib.auth.forms import AuthenticationForm
+from django.urls import reverse_lazy
+from django.contrib.auth import login
+from django.http.response import HttpResponseRedirect
 
 
-class login(CreateView):
-	model = usuario
-	form_class = registrar_cliente
+class login_form(FormView):
+	form_class = AuthenticationForm
 	template_name = 'login.html'
+	success_url = reverse_lazy('perfil') # EDITAR LA PLANTILLA
 
-def logout_view(request):
-    logout(request)
+	def form_valid(self, form):
+		login(self.request, form.get_user())
+		print('INGRESO CON EXITO')
+		return HttpResponseRedirect(self.success_url)
+		
+	def form_invalid(self, form):
+		print('NO SE PUDO INGRESAR')
+		return super().form_invalid(form)
+
+def perfil(request):
+	return HttpResponseRedirect('perfil.html')

@@ -15,12 +15,16 @@
 				<div class="card-body"> 
 					<form method="POST" class="form-group">
 						{% csrf_token %}
-						{{ form.as_p }}
+						{{ form.error }}
+						{{ form.username }}
+						{{ form.password }}
 						<button type="submit" class="btn btn-success float-right">Ingresar</button>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
+	
 </div>
+
 {% endblock contenido%}

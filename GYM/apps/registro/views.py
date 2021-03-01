@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect
 from .forms import registrar_cliente
 from .models import usuario
 from django.views.generic import CreateView
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def registro(request):
 	return registrar_cliente
 
