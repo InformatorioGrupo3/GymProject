@@ -1,7 +1,7 @@
-from django.views.generic import FormView
+from django.views.generic import FormView, RedirectView
 from django.contrib.auth.forms import AuthenticationForm
 from django.urls import reverse_lazy
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from django.http.response import HttpResponseRedirect
 
 
@@ -18,3 +18,10 @@ class login_form(FormView):
 	def form_invalid(self, form):
 		print('NO SE PUDO INGRESAR')
 		return super().form_invalid(form)
+
+class logout_user(RedirectView):
+	pattern_name = 'loggin'
+
+	def dispatch(self, request, *args, **kwargs):
+		logout(request)
+		return super().dispatch(request, *args, **kwargs)
