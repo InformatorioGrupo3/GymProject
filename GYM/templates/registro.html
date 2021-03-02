@@ -3,7 +3,9 @@
 {% block titulo %}INICIO{% endblock titulo %}
 
 <!-- Los botones del Navbar cambian acá -->
-{% block botones %} {% endblock botones %}
+{% block botones %} 
+
+{% endblock botones %}
 
 {% block contenido %} 
 <div class="container_form">
@@ -49,12 +51,15 @@
 		    {{ form.foto }}
 		</div>
 	</div>
-	<div >
+	<br>
+	<br>
+	<div class="container inline">
 	  <button type="submit" class="btn btn-primary">Registrarse</button>
+
 	  <a href="{% url 'index' %}" 
-   	   class="btn btn-danger" 
-   	   role="button" 
-   	   aria-pressed="true">Cancelar</a>
+       class="btn btn-danger" 
+       role="button" 
+       aria-pressed="true">Cancelar</a>
 	</div>
 	</form>
 </div>
