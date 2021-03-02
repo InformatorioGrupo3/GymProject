@@ -32,6 +32,9 @@
 /* Este es para hacer el fondo negro*/
 body{
 	background-image: url(../img/fondogrande.jpg);
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	display: flex; 
 }
 
 
