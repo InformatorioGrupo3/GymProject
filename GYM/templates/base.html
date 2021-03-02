@@ -25,11 +25,13 @@
 		<!-- ================ ENCABEZADO ================  -->
 <header>	
 <!--LOGO --> 
-	<div class="container-fluid">
-		<img  src="{% static 'img/strongduck.png' %}" 
-	 	  alt="logo" >
-		<span style="font-size:8vw;" id="nombre">GYM Patito</span>
-	</div>
+	<div class="conteiner-fluid">
+		<a href="{% url 'index' %}">
+		<img src="{% static 'img/logo/gympatito.png' %}"
+		 	alt="logo" 
+			style="max-width: 100%;">
+		</a>
+		</div>
 </header>
 	
 <!--  NAVBAR (STICKY) -->

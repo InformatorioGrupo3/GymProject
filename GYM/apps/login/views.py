@@ -18,6 +18,3 @@ class login_form(FormView):
 	def form_invalid(self, form):
 		print('NO SE PUDO INGRESAR')
 		return super().form_invalid(form)
-
-def perfil(request):
-	return HttpResponseRedirect('perfil.html')
