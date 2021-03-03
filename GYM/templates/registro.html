@@ -2,65 +2,83 @@
 {% load static %}
 {% block titulo %}INICIO{% endblock titulo %}
 
-<!-- Los botones del Navbar cambian acá -->
-{% block botones %} 
+{% block styles%}
+<style type="text/css">
+#container_form{
+	margin-top: 25px;
+    margin-right: 100px;
+    margin-bottom: 70px;
+    margin-left: 100px;
+	padding: 40px;
+	background: #f8f9fa;
+}
+</style>
+{% endblock styles %}
 
-{% endblock botones %}
+<!-- Los botones del Navbar cambian acá -->
+{% block botones %} {% endblock botones %}
+
 
 {% block contenido %} 
-<div class="container_form">
-	<form method="POST">
+<div id="container_form" class="container-xs">
+	<form method="POST" class="col-12">
 		{% csrf_token %}
-	<!-- Elementos fila 1 --> 
-  	<div class="form-row">
-  		<!-- Columnas de la fila 1 -->
-	    <div class="form-group col-md-6">
-			<label for="{{ form.nombre.id_for_label }}">Nombre:</label>
-			{{ form.nombre }}
-	    </div>
-	    <div class="form-group col-md-6">
-			<label for="{{ form.apellido.id_for_label }}">Apellido:</label>
-			{{ form.apellido }}
-	    </div>
-	</div>
-	<!-- Elementos fila 2 --> 
-	<div class="form-row">
-		<!-- Columnas de la fila 2 -->
-		<div class="form-group col-md-6">
-		    <label  for="{{ form.dni.id_for_label }}" >DNI:</label>
-		    {{ form.dni }}
+		<!-- Elementos fila 1 --> 
+	  	<div class="form-row">
+	  		<!-- Columnas de la fila 1 -->
+		    <div class="form-group col-md-6">
+				<label for="{{ form.nombre.id_for_label }}">Nombre:</label>
+				<br>
+				<span class="offset-md-3">{{ form.nombre }}</span>
+		    </div>
+		    <div class="form-group col-md-6">
+				<label for="{{ form.apellido.id_for_label }}">Apellido:</label>
+				<br>
+				<span class="offset-md-3">{{ form.apellido }}</span>
+		    </div>
 		</div>
-		<div class="form-group col-md-6">
-		    <label  for="{{ form.edad.id_for_label }}" >Edad:</label>
-			{{ form.edad }}
+		<!-- Elementos fila 2 --> 
+		<div class="form-row">
+			<!-- Columnas de la fila 2 -->
+			<div class="form-group col-md-6">
+			    <label  for="{{ form.dni.id_for_label }}" >DNI:</label>
+			    <br>
+			    <span class="offset-md-3">{{ form.dni }}</span>
+			</div>
+			<div class="form-group col-md-6">
+			    <label  for="{{ form.fecha_nacimiento.id_for_label }}" >Fecha de Nacimiento:</label>
+			    <br>
+				<span class="offset-md-3">{{ form.fecha_nacimiento }}</span>
+			</div>
 		</div>
-	</div>
-	<!-- Elementos fila 4 --> 
-	<div class="form-row">
-		<!-- Columnas de la fila 4 -->
-	  	<div class="form-group col-md-6">
-		    <label for="{{ form.email.id_for_label }}">Email:</label>
-		    {{ form.email }}
-	  	</div>
-		<div class="form-group col-md-6">
-		    <label for="{{ form.contraseña.id_for_label }}">Password</label>
-		    {{ form.contraseña }}
+		<!-- Elementos fila 4 --> 
+		<div class="form-row">
+			<!-- Columnas de la fila 4 -->
+		  	<div class="form-group col-md-6">
+			    <label for="{{ form.email.id_for_label }}">Email:</label>
+			    <br>
+			    <span class="offset-md-3">{{ form.email }}</span>
+		  	</div>
+			<div class="form-group col-md-6">
+			    <label for="{{ form.contraseña.id_for_label }}">Contraseña:</label>
+			    <br>
+			    <span class="offset-md-3">{{ form.contraseña }}</span>
+			</div>
+			<div class="form-group col-12">
+			    <label for="{{ form.foto.id_for_label }}">Foto:</label>
+			    <span class="offset-md-3">{{ form.foto }}</span>
+			</div>
 		</div>
-		<div class="form-group col-md-6">
-		    <label for="{{ form.foto.id_for_label }}">Foto:</label>
-		    {{ form.foto }}
+		<div class="form-group col-12">
+			<a href="{% url 'index' %}" 
+	       		class="btn btn-danger float-left" 
+	       		role="button" 
+	       		aria-pressed="true">Cancelar</a>
+		  	<button type="submit" 
+		  			class="btn btn-primary float-right">Registrarse
+		  	</button>
 		</div>
-	</div>
-	<br>
-	<br>
-	<div class="container inline">
-	  <button type="submit" class="btn btn-primary">Registrarse</button>
-
-	  <a href="{% url 'index' %}" 
-       class="btn btn-danger" 
-       role="button" 
-       aria-pressed="true">Cancelar</a>
-	</div>
+		  
 	</form>
 </div>
 

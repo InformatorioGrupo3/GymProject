@@ -10,47 +10,53 @@
 
 
 {% block contenido %} 
+
 <div class="container">
 	<div class="raw">
-	<div class="card">
-		<div class="card-body"> 
-			<form method="POST" class="form-group">
-				{% csrf_token %}
-				{{ form.error }}
-				<div class="raw">
-					<div class="col-md-6">
-						<label for="{{ form.username.id_for_label }}">Usuario:</label>		
-					</div>
+		<div class="col-12 col-md-6 offset-md-3">
+			<div class="card">
+				<div class="card-body"> 
+					<form method="POST" class="form-group col-12">
+						{% csrf_token %}
+						{{ form.error }}
+						<div class="raw">
+							<div class="col-md-6">
+								<label for="{{ form.username.id_for_label }}">Usuario:</label>		
+							</div>
+						</div>
+						<div class="raw">
+							<div class="col-md-6">
+								<span class="offset-md-3">
+									{{ form.username }}
+								</span>		
+							</div>
+						</div>
+						<br>
+						<div class="raw">
+							<div class="col-md-6">
+								<label for="{{ form.password.id_for_label }}">Contraseña:</label>		
+							</div>
+						</div>
+						<div class="raw">
+							<div class="col-md-6">
+								<span class="offset-md-3">
+								{{ form.password }}		
+								</span>		
+							</div>
+						</div>
+						<br>
+						
+							<a href="{% url 'index' %}" 
+			       				class="btn btn-danger float-left" 
+			       				role="button" 
+			       				aria-pressed="true">Cancelar</a>
+			       			<button type="submit" 
+									class="btn btn-outline-success float-right">Ingresar</button>
+		       			
+					</form>
 				</div>
-				<div class="raw">
-					<div class="col">
-						{{ form.username }}		
-					</div>
-				</div>
-				<br>
-				<div class="raw">
-					<div class="col-md-6">
-						<label for="{{ form.password.id_for_label }}">Contraseña:</label>		
-					</div>
-				</div>
-				<div class="raw">
-					<div class="col">
-						{{ form.password }}				
-					</div>
-				</div>
-				<br>
-				<br>
-				<div class="container inline">
-					<button type="submit" 
-							class="btn btn-outline-success float-right">Ingresar</button>
-					<a href="{% url 'index' %}" 
-	       				class="btn btn-danger" 
-	       				role="button" 
-	       				aria-pressed="true">Cancelar</a>
-       			</div>
-			</form>
+			</div>
 		</div>
-	</div>
 	</div>
 </div>
 
