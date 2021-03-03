@@ -6,7 +6,7 @@ from django import forms
 class usuario(models.Model):
     nombre = models.CharField(max_length=50, blank=False)
     apellido = models.CharField(max_length=20, blank=False)
-    edad = models.IntegerField(unique=True)
+    fecha_nac = models.DateField()
     dni = models.CharField(max_length=9, unique=True, blank=False)
     contraseña = models.CharField(null=False, max_length= 20)
     email = models.EmailField(blank=True)
