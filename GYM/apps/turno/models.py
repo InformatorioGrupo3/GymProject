@@ -1,4 +1,5 @@
 from django.db import models
+from apps.registro.models import usuario
 
 class actividades(models.Model):
     Zumba = 'Zumba'
