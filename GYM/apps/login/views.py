@@ -25,3 +25,6 @@ class logout_user(RedirectView):
 	def dispatch(self, request, *args, **kwargs):
 		logout(request)
 		return super().dispatch(request, *args, **kwargs)
+
+
+	

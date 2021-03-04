@@ -14,3 +14,4 @@ def contacto(request):
 
 def informacion(request):
 	return render(request, 'informacion.html')
+
