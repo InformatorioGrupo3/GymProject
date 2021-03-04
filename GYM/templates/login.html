@@ -4,27 +4,60 @@
 
 
 <!-- Los botones del Navbar cambian acá -->
-{% block botones %} {% endblock botones %}
+{% block botones %} 
+
+{% endblock botones %}
 
 
 {% block contenido %} 
+
 <div class="container">
 	<div class="raw">
 		<div class="col-12 col-md-6 offset-md-3">
 			<div class="card">
 				<div class="card-body"> 
-					<form method="POST" class="form-group">
+					<form method="POST" class="form-group col-12">
 						{% csrf_token %}
 						{{ form.error }}
-						{{ form.username }}
-						{{ form.password }}
-						<button type="submit" class="btn btn-success float-right">Ingresar</button>
+						<div class="raw">
+							<div class="col-md-6">
+								<label for="{{ form.username.id_for_label }}">Usuario:</label>		
+							</div>
+						</div>
+						<div class="raw">
+							<div class="col-md-6">
+								<span class="offset-md-3">
+									{{ form.username }}
+								</span>		
+							</div>
+						</div>
+						<br>
+						<div class="raw">
+							<div class="col-md-6">
+								<label for="{{ form.password.id_for_label }}">Contraseña:</label>		
+							</div>
+						</div>
+						<div class="raw">
+							<div class="col-md-6">
+								<span class="offset-md-3">
+								{{ form.password }}		
+								</span>		
+							</div>
+						</div>
+						<br>
+						
+							<a href="{% url 'index' %}" 
+			       				class="btn btn-danger float-left" 
+			       				role="button" 
+			       				aria-pressed="true">Cancelar</a>
+			       			<button type="submit" 
+									class="btn btn-outline-success float-right">Ingresar</button>
+		       			
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-	
 </div>
 
 {% endblock contenido%}

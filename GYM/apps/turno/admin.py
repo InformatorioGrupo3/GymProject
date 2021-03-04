@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import actividades, turno
 
-# Register your models here.
+admin.site.register(actividades)
+admin.site.register(turno)
