@@ -6,6 +6,7 @@ class actividades(models.Model):
     Aerobic = 'Aerobic'
     Musculacion = 'Musculacion'
     Spinning = 'Spinning'
+    
     actividades_gym = [
         (None, 'Seleccione una opcion'),
         (Zumba, 'Zumba'),
@@ -14,6 +15,7 @@ class actividades(models.Model):
         (Musculacion, 'Musculacion'),
         (Spinning, 'Spinning'),
     ]
+
     actividad = models.CharField(
         max_length = 12,
         choices = actividades_gym,
@@ -24,7 +26,7 @@ class actividades(models.Model):
 class turno(models.Model):
     usuario = models.ManyToManyField('usuario', on_delete=models.CASCADE)
     actividad = models.ForeignKey('actividades', on_delete=models.CASCADE)
-    cupo = models.CharField(max_length=50)
+    cupo = models.CharField(max_length=50, verbose_name = 'Cupo disponible')
     horario = models.DateField(auto_now_add=True)
 
     def __str__(self):

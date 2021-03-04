@@ -6,10 +6,9 @@ from django import forms
 class usuario(models.Model):
     nombre = models.CharField(max_length=50, blank=False)
     apellido = models.CharField(max_length=20, blank=False)
-    edad = models.IntegerField(unique=True)
-    dni = models.CharField(max_length=9, unique=True, blank=False)
+    dni = models.CharField(max_length=9, unique=True, blank=False, verbose_name = 'DNI')
     contraseña = models.CharField(null=False, max_length= 20)
-    email = models.EmailField(blank=True)
+    email = models.EmailField(blank=True, verbose_name = 'Correo electronico')
     telefono = models.IntegerField(blank=True, null=True)
     foto = models.ImageField(upload_to= 'foto_usuario', null=True, blank=True)
 
