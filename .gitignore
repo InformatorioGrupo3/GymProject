@@ -5,3 +5,5 @@ GYM/GYM/settings/base.py
 GYM/GYM/settings/local.py
 GYM/GYM/settings/production.py
 
+*.sqlite3
+migrations/
