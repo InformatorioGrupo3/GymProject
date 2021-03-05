@@ -1,5 +1,7 @@
 from django.db import models
 from apps.registro.models import usuario
+from datetime import datetime
+from django.db.models.constraints import UniqueConstraint
 
 class actividades(models.Model):   
     nombre = models.CharField(max_length=50, null=False, blank=False, unique=True)
@@ -8,41 +10,32 @@ class actividades(models.Model):
         blank=False,
         null=False
         )
+    
+    class Meta:
+        db_table = 'actividades'
+        ordering = ['nombre', 'cupo_max']
+        verbose_name = 'actividad'
+        verbose_name_plural = 'actividades'
 
-#Lo que está comentado no sirve, se agregan actividades desde el admin
-'''
-    Zumba = 'Zumba'
-    Funcional = 'Funcional'
-    Aerobic = 'Aerobic'
-    Musculacion = 'Musculacion'
-    Spinning = 'Spinning'
-    actividades_gym = [
-        (None, 'Seleccione una opcion'),
-        (Zumba, 'Zumba'),
-        (Funcional, 'Funcional'),
-        (Aerobic, 'Aerobic'),
-        (Musculacion, 'Musculacion'),
-        (Spinning, 'Spinning'),
-    ]
-    actividad = models.CharField(
-        max_length = 12,
-        choices = actividades_gym,
-        default = None,
-    )
-'''
+    def __str__(self):
+        return self.nombre
+
 
 class turno(models.Model):
-    usuario = models.ManyToManyField(usuario, verbose_name='usuarios en este turno', name='usuario')
+    usuario = models.ManyToManyField(usuario, verbose_name='usuarios en este turno', name='usuario', blank=True)
     actividad = models.ForeignKey(actividades, on_delete=models.CASCADE, name='actividad')
     #cupo_max = actividades.cupo_max
     cupo_actual = models.PositiveSmallIntegerField(default=0)
-    horario = models.DateTimeField(auto_now=True)
+    horario = models.DateTimeField()
     disponible = models.BooleanField(default=True)
 
     class Meta:
         db_table = 'turnos'
         ordering = ['actividad', 'horario']
+        verbose_name = 'turno'
+        verbose_name_plural = 'turnos'
+        unique_together = ('actividad', 'horario')
 
     def __str__(self):
-        return super.usuario, 'Actividad: {}\n Horario:{}'.format(self.actividad, self.horario)
+        return f'{str(self.id).zfill(5)} {self.actividad} / {self.horario}'
 
