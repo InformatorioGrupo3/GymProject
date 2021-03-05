@@ -16,6 +16,8 @@ class usuario(models.Model):
     class Meta:
         db_table = 'usuarios'
         ordering = ['apellido', 'nombre']
+        verbose_name = 'usuario'
+        verbose_name_plural = 'usuarios'
 
     def __str__(self):
-        return 'Usuario {}, {} \n DNI: {}'.format(self.apellido, self.nombre, self.dni)
+        return f'{self.apellido}, {self.nombre} - DNI: {self.dni}'
