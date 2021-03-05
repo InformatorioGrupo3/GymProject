@@ -4,3 +4,4 @@ GYM/GYM/settings/
 
 *.sqlite3
 migrations/
+*.sqlite3
