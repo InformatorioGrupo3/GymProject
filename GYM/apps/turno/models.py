@@ -8,6 +8,7 @@ class actividad(models.Model):
         blank=False,
         null=False
         )
+    descripcion = models.TextField(blank=True, max_length=200, default='x')
     
     class Meta:
         db_table = 'actividades'
@@ -28,7 +29,6 @@ class turno(models.Model):
         limit_choices_to={'habilitado':True},
         )
     actividad = models.ForeignKey(actividad, on_delete=models.CASCADE, name='actividad')
-    #cupo_max = actividades.cupo_max
     cupo_actual = models.PositiveSmallIntegerField(default=0)
     horario = models.DateTimeField()
     disponible = models.BooleanField(default=True)
@@ -42,6 +42,3 @@ class turno(models.Model):
 
     def __str__(self):
         return f'{str(self.id).zfill(5)} {self.actividad} / {self.horario}'
-
-
-#class 
