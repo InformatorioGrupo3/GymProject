@@ -12,6 +12,7 @@ class usuario(models.Model):
     email = models.EmailField(blank=True)
     telefono = models.CharField(blank=True, null=True, max_length=20)
     foto = models.ImageField(upload_to= 'foto_usuario', null=True, blank=True)
+    habilitado = models.BooleanField(default=True)
 
     class Meta:
         db_table = 'usuarios'

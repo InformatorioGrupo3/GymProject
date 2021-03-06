@@ -1,9 +1,7 @@
 from django.db import models
 from apps.registro.models import usuario
-from datetime import datetime
-from django.db.models.constraints import UniqueConstraint
 
-class actividades(models.Model):   
+class actividad(models.Model):   
     nombre = models.CharField(max_length=50, null=False, blank=False, unique=True)
     cupo_max = models.PositiveSmallIntegerField(
         verbose_name='Cupo máximo de personas',
@@ -22,8 +20,14 @@ class actividades(models.Model):
 
 
 class turno(models.Model):
-    usuario = models.ManyToManyField(usuario, verbose_name='usuarios en este turno', name='usuario', blank=True)
-    actividad = models.ForeignKey(actividades, on_delete=models.CASCADE, name='actividad')
+    usuario = models.ManyToManyField(
+        usuario,
+        verbose_name='usuarios en este turno',
+        name='usuario',
+        blank=True,
+        limit_choices_to={'habilitado':True},
+        )
+    actividad = models.ForeignKey(actividad, on_delete=models.CASCADE, name='actividad')
     #cupo_max = actividades.cupo_max
     cupo_actual = models.PositiveSmallIntegerField(default=0)
     horario = models.DateTimeField()
@@ -39,3 +43,5 @@ class turno(models.Model):
     def __str__(self):
         return f'{str(self.id).zfill(5)} {self.actividad} / {self.horario}'
 
+
+#class 
