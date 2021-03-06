@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block titulo %}TURNO{% endblock titulo %}
+{% block titulo %}INICIO{% endblock titulo %}
 <!-- Los botones del Navbar cambian acá -->
 {% block botones %} {% endblock botones %}
 
@@ -36,7 +36,7 @@
 
 <div class="btn-group">
   <div class=" col-1 offset-11">
-    <div class="btn-group">
+    <div class="btn-group bg-warning">
     <button type="button" class="btn-lg btn-warning" style="margin-left: -5px;"> lunes </button>
     <button type="button" class="btn-lg btn-warning" style="margin-left: 45px;"> martes </button>
     <button type="button" class="btn-lg btn-warning" style="margin-left: 45px;"> miercoles </button>
@@ -110,6 +110,29 @@
   <br>
 </div>
 
+<div class="btn-group">
+  <div class=" col-1 offset-5">
+    <div class="btn-group bg-warning">
+    <button type="button" class="btn-lg btn-dark" style="margin: 25px; "> musculacion </button>
+    <button type="button" class="btn-lg btn-dark" style="margin: 25px;"> spinning</button>
+    <button type="button" class="btn-lg btn-dark" style="margin: 25px;"> zumba </button>
+    <button type="button" class="btn-lg btn-dark" style="margin: 25px;"> funcional </button>
+  </div>
+  </div>
+</div>
+<div>
+  <br>
+</div>
+
+<div class="btn-group">
+  <div class=" col-4 offset-5">
+    <div class="btn-group bg-warning">
+    <button type="button" class="btn-lg btn-primary" style="margin: 25px; "> confirmar </button>
+    <button type="button" class="btn-lg btn-danger" style="margin: 25px;"> cancelar</button>
+    <button type="button" class="btn-lg btn-success" style="margin: 25px;"> eliminar turno </button>
+  </div>
+  </div>
+</div>
 
 
 
