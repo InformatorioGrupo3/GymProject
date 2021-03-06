@@ -9,7 +9,7 @@ class AdminTurno(admin.ModelAdmin):
 
 class AdminActividad(admin.ModelAdmin):
     model = actividad
-    list_display = ('nombre', 'cupo_max', 'descripcion')
+    list_display = ('nombre', 'cupo_max', 'disponible', 'descripcion')
 
 admin.site.register(turno, AdminTurno)
 admin.site.register(actividad, AdminActividad)

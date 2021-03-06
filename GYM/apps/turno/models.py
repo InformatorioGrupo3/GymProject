@@ -9,6 +9,7 @@ class actividad(models.Model):
         null=False
         )
     descripcion = models.TextField(blank=True, max_length=200, default='x')
+    disponible = models.BooleanField(default=True)
     
     class Meta:
         db_table = 'actividades'
@@ -28,7 +29,12 @@ class turno(models.Model):
         blank=True,
         limit_choices_to={'habilitado':True},
         )
-    actividad = models.ForeignKey(actividad, on_delete=models.CASCADE, name='actividad')
+    actividad = models.ForeignKey(
+        actividad,
+        on_delete=models.CASCADE,
+        name='actividad',
+        limit_choices_to={'disponible':True},
+        )
     cupo_actual = models.PositiveSmallIntegerField(default=0)
     horario = models.DateTimeField()
     disponible = models.BooleanField(default=True)
