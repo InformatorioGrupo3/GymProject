@@ -5,16 +5,21 @@ from django import forms
 
 class usuario(models.Model):
     nombre = models.CharField(max_length=50, blank=False)
-    apellido = models.CharField(max_length=20, blank=False)
-    dni = models.CharField(max_length=9, unique=True, blank=False, verbose_name = 'DNI')
-    contraseña = models.CharField(null=False, max_length= 20)
-    email = models.EmailField(blank=True, verbose_name = 'Correo electronico')
-    telefono = models.IntegerField(blank=True, null=True)
+    apellido = models.CharField(max_length=50, blank=False)
+    fecha_nacimiento = models.DateField(blank=True, null=True)
+    dni = models.PositiveIntegerField(unique=True, blank=False, help_text='DNI sin puntos')
+    contraseña = models.CharField(null=False, max_length=30)
+    email = models.EmailField(blank=True)
+    telefono = models.CharField(blank=True, null=True, max_length=20)
     foto = models.ImageField(upload_to= 'foto_usuario', null=True, blank=True)
+    habilitado = models.BooleanField(default=True)
 
     class Meta:
         db_table = 'usuarios'
         ordering = ['apellido', 'nombre']
+        verbose_name = 'usuario'
+        verbose_name_plural = 'usuarios'
 
     def __str__(self):
-        return 'Usuario {}, {} \n DNI: {}'.format(self.apellido, self.nombre, self.dni)
+        return f'{self.apellido}, {self.nombre} - DNI: {self.dni}'
+

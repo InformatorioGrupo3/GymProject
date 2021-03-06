@@ -1,5 +1,15 @@
 from django.contrib import admin
-from .models import actividades, turno
+from apps.turno.models import turno, actividad
 
-admin.site.register(actividades)
-admin.site.register(turno)
+# Register your models here.
+
+class AdminTurno(admin.ModelAdmin):
+    model = turno
+    list_display = ('actividad', 'horario', 'disponible', 'cupo_actual')
+
+class AdminActividad(admin.ModelAdmin):
+    model = actividad
+    list_display = ('nombre', 'cupo_max')
+
+admin.site.register(turno, AdminTurno)
+admin.site.register(actividad, AdminActividad)

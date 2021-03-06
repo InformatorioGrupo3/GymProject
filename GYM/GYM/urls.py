@@ -23,4 +23,5 @@ urlpatterns = [
     path('', include('apps.inicio.urls')),
     path('registro/', include('apps.registro.urls')),
     path('login/', include('apps.login.urls')),
+    #path('turno/', include('apps.turno.urls')),
 ]
