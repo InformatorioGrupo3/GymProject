@@ -1,5 +1,5 @@
 from django.db import models
-from apps.registro.models import usuario
+from apps.registro.models import *
 
 class actividad(models.Model):   
     nombre = models.CharField(max_length=50, null=False, blank=False, unique=True)
@@ -29,6 +29,7 @@ class turno(models.Model):
         blank=True,
         limit_choices_to={'habilitado':True},
         )
+    
     actividad = models.ForeignKey(
         actividad,
         on_delete=models.CASCADE,
