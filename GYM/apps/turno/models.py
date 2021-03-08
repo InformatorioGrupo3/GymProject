@@ -28,7 +28,6 @@ class turno(models.Model):
         limit_choices_to={'habilitado':True},
         )
     actividad = models.ForeignKey(actividad, on_delete=models.CASCADE, name='actividad')
-    #cupo_max = actividades.cupo_max
     cupo_actual = models.PositiveSmallIntegerField(default=0)
     horario = models.DateTimeField()
     disponible = models.BooleanField(default=True)

@@ -8,3 +8,4 @@ class AdminUsuario(admin.ModelAdmin):
 
 admin.site.register(usuario, AdminUsuario)
 
+
