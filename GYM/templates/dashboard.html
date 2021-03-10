@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %}Turnos{% endblock titulo %}
+{% block styles %}
+<style>
+
+/* 1- Perfil */
+
+.circular-square {
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+/* 2- Turno */
+
+
+#raw_horario::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#dias {
+  float: right;
+}
+
+#horas {
+  float: right;
+}
+
+#horario_contenido{
+  margin: auto;
+  padding: auto;
+  overflow-x: auto;
+  width: 80%;
+  max-width: 1000px;
+  overflow: auto;
+}
+
+</style>
+{% endblock styles %}
+
+
+{% block contenido %}
+
+<div class="container-fluid">
+  
+  <div class="row" id="row_horario">
+    <div class="col-3 pt-4 pl-4">
+     
+      {% include 'perfil.html' %}
+    
+    </div>
+  
+    <div class="col-9">
+      <div class="d-flex  flex-sm-wrap justify-content-md-end pt-4 pb-2 mb-3">
+        
+
+        {% block boton_turno %}
+        <div class="btn-group btn-group-lg" role="group" aria-label="Prev-Next">
+              
+           <a href="{% url 'solicitar_turno' %}" 
+             class="btn btn-outline-success" 
+             role="button" 
+            aria-pressed="true">Solicitar Turno &raquo;</a>
+        
+       </div>
+       {% endblock boton_turno %}
+       
+     </div>
+
+      {% block horario %}
+        {% include 'turno.html' %}
+      {% endblock horario %}
+      
+    </div>
+    </div>
+  
+</div>
+
+
+
+
+{% endblock contenido %}
+

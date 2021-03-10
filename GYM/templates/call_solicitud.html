@@ -1,0 +1,53 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+{% block titulo %}Solicitar Turno{% endblock titulo %}
+
+{% block styles %}
+<style>
+
+
+#dias {
+  float: right;
+}
+
+#horas {
+  float: right;
+}
+
+#horario_contenido{
+  margin: auto;
+  padding: auto;
+  overflow-x: auto;
+  width: 80%;
+  max-width: 1000px;
+}
+
+#actividades{
+	margin: auto;
+ 	padding: auto;
+ 	
+}
+</style>
+{% endblock styles %}
+
+
+
+{% block contenido %}
+
+{% block boton_turno %}          
+<div class="btn-group btn-group-lg" role="group" aria-label="Prev-Next">
+ 
+ <a href="{% url 'turno' %}" 
+             class="btn btn-outline-success" 
+             role="button" 
+            aria-pressed="true">&laquo;  Mis Turnos</a>
+
+</div>
+{% endblock boton_turno %}
+
+
+{% block horario %}
+	{% include 'solicitar_turno.html' %}
+{% endblock horario %}
+
+{% endblock contenido %}

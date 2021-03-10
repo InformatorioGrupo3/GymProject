@@ -3,5 +3,7 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.turno, name='turno'),
+    path('turno/', views.turno, name='turno'),
+	path('solicitar_turno/', views.solicitar_turno, name='solicitar_turno'),
+	
 ]

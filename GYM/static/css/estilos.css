@@ -58,6 +58,15 @@ body{
 }
 
 
+/* FORMUARIO REGISTRO */
 
+#container_form{
+	margin-top: 25px;
+    margin-right: 100px;
+    margin-bottom: 70px;
+    margin-left: 100px;
+	padding: 40px;
+	background: #f8f9fa;
+}
 
-
+/*  */

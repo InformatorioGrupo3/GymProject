@@ -58,6 +58,11 @@
       	<li class="nav-item {% if request.path == '/contacto/' %}active{% endif %}">
         	<a class="nav-link" href="{% url 'contacto' %}">CONTACTO</a>
       	</li>
+         {% if user.is_authenticated %}
+        <li class="nav-item {% if request.path == '/turno/' %}active{% endif %}">
+          <a class="nav-link" href="{% url 'turno' %}">TURNOS</a>
+        </li>
+        {% endif %}
     </ul>
 
     <!-- Botones de ingreso -->
