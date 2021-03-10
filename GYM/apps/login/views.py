@@ -20,7 +20,7 @@ class login_form(FormView):
 		return super().form_invalid(form)
 
 class logout_user(RedirectView):
-	pattern_name = 'loggin'
+	pattern_name = 'login'
 
 	def dispatch(self, request, *args, **kwargs):
 		logout(request)

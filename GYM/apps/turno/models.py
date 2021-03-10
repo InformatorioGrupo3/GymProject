@@ -8,7 +8,7 @@ class actividad(models.Model):
         blank=False,
         null=False
         )
-    descripcion = models.TextField(blank=True, max_length=200, default='x')
+    descripcion = models.TextField(blank=True, max_length=200, default='')
     disponible = models.BooleanField(default=True)
     
     class Meta:
@@ -22,12 +22,12 @@ class actividad(models.Model):
 
 
 class turno(models.Model):
-    usuario = models.ManyToManyField(
-        usuario,
-        verbose_name='usuarios en este turno',
-        name='usuario',
+    cliente = models.ManyToManyField(
+        cliente,
+        verbose_name='clientes en este turno',
+        name='cliente',
         blank=True,
-        limit_choices_to={'habilitado':True},
+        limit_choices_to={'is_active':True},
         )
     
     actividad = models.ForeignKey(
@@ -47,5 +47,17 @@ class turno(models.Model):
         verbose_name_plural = 'turnos'
         unique_together = ('actividad', 'horario')
 
+    '''
+    def ingresar_usuario(self, usuario, turno):
+        resultado = False
+        if turno.actividad.cupo_max < turno.cupo_actual:
+            pass
+        else:
+            turno.cupo_actual += 1
+            resultado = True
+            turno.save()
+        
+        return resultado
+    '''
     def __str__(self):
         return f'{str(self.id).zfill(5)} {self.actividad} / {self.horario}'

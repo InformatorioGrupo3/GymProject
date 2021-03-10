@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from GYM.apps.registro.models import usuario
+from GYM.apps.registro.models import *
 from .models import turno
 
 class registrar_turno(forms.ModelForm):
@@ -9,4 +9,4 @@ class registrar_turno(forms.ModelForm):
 		fields = '__all__'
 	
 	def __str__(self):
-		return super(usuario).__str__()
+		return super(cliente).__str__()
