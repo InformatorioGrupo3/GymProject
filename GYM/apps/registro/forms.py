@@ -6,11 +6,23 @@ from .models import *
 class registrar_cliente(UserCreationForm):
     class Meta:
         model = cliente
-        fields = ('username', 'email')
+        #fields = '__all__'
+        fields = (
+            'username',
+            'email',
+            'first_name',
+            'last_name',
+            'dni',
+            'fecha_nacimiento',
+            'telefono',
+            'foto',
+
+        )
 
 class editar_cliente(UserChangeForm):
     class Meta:
         model = cliente
+        #fields = '__all__'
         fields = ('username', 'email')
 
 '''

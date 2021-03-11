@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block titulo %}LOGIN{% endblock titulo %}
+{% block titulo %}INGRESO{% endblock titulo %}
 
 
 <!-- Los botones del Navbar cambian acá -->
@@ -15,16 +15,13 @@
 				<div class="card-body"> 
 					<form method="POST" class="form-group">
 						{% csrf_token %}
-						{{ form.error }}
-						{{ form.username }}
-						{{ form.password }}
+						{{ form.as_p }}
 						<button type="submit" class="btn btn-success float-right">Ingresar</button>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-	
 </div>
 
 {% endblock contenido%}

@@ -8,7 +8,19 @@ class administrador(UserAdmin):
     add_form = registrar_cliente
     form = editar_cliente
     model = cliente
-    list_display = ['email', 'username',]
+    list_display = (
+        'last_name',
+        'first_name',
+        'username',
+        'email',
+        'dni',
+        'fecha_nacimiento',
+        'password',
+        'date_joined',
+        'is_active',
+        'is_staff',
+        'is_superuser',
+    )
 
 admin.site.register(cliente, administrador)
 

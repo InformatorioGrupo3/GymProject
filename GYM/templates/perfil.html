@@ -11,15 +11,18 @@
     <p>Actividades</p>
     <p>Horarios</p>
     <p>etc...</p>
-    <a href="{% url 'logout' %}">Cerrar sesion</a>
 <div>
     <div>
         <ul>
             {% if user.is_authenticated %}
-                <li>User: {{ user.get_username }}</li>
-                <li><a href="{% url 'perfil'%}?next={{request.perfil}}">Logout</a></li>
+                <li>Usuario: {{ user.get_username }}</li>
+                <li>Nombre: {{ user.first_name }}</li>
+                <li>Apellido: {{ user.last_name }}</li>
+                
+                
+                <a href="{% url 'logout' %}">Cerrar sesión</a>
             {% else %}
-                <li><a href="{% url 'login'%}?next={{request.login}}">Login</a></li>
+                <li><a href="{% url 'login' %}">Iniciar sesión</a>Login</a></li>
             {% endif %} 
         </ul>
     </div>
