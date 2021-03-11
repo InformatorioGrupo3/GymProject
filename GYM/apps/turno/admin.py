@@ -5,12 +5,26 @@ from apps.turno.models import *
 
 class AdminTurno(admin.ModelAdmin):
     model = turno
-    list_display = ('actividad', 'horario', 'disponible', 'cupo_actual',)
-    list_filter = ('disponible',)
+    list_display = (
+        'actividad',
+        'horario',
+        'disponible',
+        'cupo_actual',
+        )
+    list_filter = (
+        'disponible',
+        'actividad',
+        )
+    readonly_fields = ('cupo_actual',) 
 
 class AdminActividad(admin.ModelAdmin):
     model = actividad
-    list_display = ('nombre', 'cupo_max', 'disponible', 'descripcion',)
+    list_display = (
+        'nombre',
+        'cupo_max',
+        'disponible',
+        'descripcion',
+        )
     list_filter = ('disponible',)
 
 admin.site.register(turno, AdminTurno)

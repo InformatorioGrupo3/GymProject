@@ -9,4 +9,4 @@ class registrar_turno(forms.ModelForm):
 		fields = '__all__'
 	
 	def __str__(self):
-		return super(cliente).__str__()
+		return super(usuario).__str__()
