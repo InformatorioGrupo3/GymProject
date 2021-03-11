@@ -2,9 +2,9 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 class usuario(AbstractUser):
-    fecha_nacimiento = models.DateField(blank=True, null=True, help_text='DD/MM/AAAA')
+    fecha_nacimiento = models.DateField(blank=True, null=True, help_text='DD-MM-AAAA')
     dni = models.PositiveIntegerField(unique=True, blank=False, help_text='DNI sin puntos', null=True)
-    telefono = models.CharField(blank=True, null=True, max_length=20)
+    telefono = models.CharField(blank=True, default='', max_length=20)
     foto = models.ImageField(upload_to='foto_usuario', null=True, blank=True)
 
     class Meta:
