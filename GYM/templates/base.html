@@ -69,6 +69,11 @@
       	<li class="nav-item {% if request.path == '/contacto/' %}active{% endif %}">
         	<a class="nav-link" href="{% url 'contacto' %}">CONTACTO</a>
       	</li>
+         {% if user.is_authenticated %}
+        <li class="nav-item {% if request.path == '/turno/' %}active{% endif %}">
+          <a class="nav-link" href="{% url 'turno' %}">TURNOS</a>
+        </li>
+        {% endif %}
     </ul>
 
     <!-- Botones de ingreso -->
@@ -80,14 +85,18 @@
        aria-pressed="true">Cerrar sesión</a>
   {% else %}
   {% block botones %}
-    <a href="{% url 'login' %}" 
-       class="btn btn-outline-warning my-2 my-sm-0" 
-       role="button" 
-       aria-pressed="true">Iniciar sesión</a>
-    <a href="{% url 'registro' %}" 
-       class="btn btn-info btn-lg" 
-       role="button" 
-       aria-pressed="true">Registrarse</a>
+        <button onclick="abrir_registro('{% url 'login' %}')" 
+              class="btn btn-outline-warning my-2 my-sm-0"
+              data-toggler="modal"
+              data-target="#myModalini"
+              aria-pressed="true">Iniciar sesión
+    </button>
+    <button onclick="abrir_registro('{% url 'registro' %}')" 
+              class="btn btn-info my-2 my-sm-0"
+              data-toggler="modal"
+              data-target="#myModalreg"
+              aria-pressed="true">Registrarse
+      </button>
     {% endblock botones %}
   {% endif %}
    </div>
@@ -97,10 +106,11 @@
 	
 		<!-- ================ PRINCIPAL ================  -->
 <main>
-{% block contenido %}
-
-{% endblock contenido %}
+{% block contenido %}{% endblock contenido %}
+<div class="modal fade" id="myModalini" role="dialog"></div>
+<div class="modal fade" id="myModalreg" role="dialog"></div>
 </main>
+
 
 		<!-- ================ PIE DE PÁGINA ================  -->
 
@@ -115,7 +125,21 @@
 	<script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
 	<script src="{% static 'js/popper.min.js' %}"></script>
 	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+{% block extrasjs %}
+<script type="text/javascript">
+  function abrir_registro(url){
+    $('#myModalini').load(url, function(){
+      $(this).modal('show');
+    });
+  };
 
+  function abrir_registro(url){
+    $('#myModalreg').load(url, function(){
+      $(this).modal('show');
+    });
+  };
+</script>
+{% endblock extrasjs%}  
 	
 </body>
 </html>

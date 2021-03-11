@@ -1,7 +1,5 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block titulo %}LOGIN{% endblock titulo %}
 
+<<<<<<< HEAD
 
 <!-- Los botones del Navbar cambian acá -->
 {% block botones %} 
@@ -11,17 +9,19 @@
 
 {% block contenido %} 
 
+=======
+>>>>>>> f4c7edf5f9d9ac49093d720f37fcbd3bbe4953ec
 <div class="container">
 	<div class="raw">
 		<div class="col-12 col-md-6 offset-md-3">
 			<div class="card">
 				<div class="card-body"> 
-					<form method="POST" class="form-group col-12">
+					<form method="post" class="form-group col-12">
 						{% csrf_token %}
 						{{ form.error }}
 						<div class="raw">
 							<div class="col-md-6">
-								<label for="{{ form.username.id_for_label }}">Usuario:</label>		
+								<label for="{{ form.username.id_for_label }}">Email:</label>		
 							</div>
 						</div>
 						<div class="raw">
@@ -60,4 +60,4 @@
 	</div>
 </div>
 
-{% endblock contenido%}
+

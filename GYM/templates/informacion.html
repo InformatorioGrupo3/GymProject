@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block titulo %}INFORMACIÓN{% endblock titulo %}
+{% block styles %}
+<style type="text/css">
+  h1{
+    margin: auto;
+  }
 
 #contenido_carrousel{
   position: relative;
@@ -21,10 +26,6 @@
 }
 </style>
 {% endblock styles %}
-
-<!-- Los botones del Navbar cambian acá -->
-{% block botones %} {% endblock botones %}
-
 
 {% block contenido %} 
 

@@ -1,16 +1,16 @@
 from django.shortcuts import render
-from django.views.generic import CreateView, UpdateView, DeleteView
+from django.views.generic import CreateView
 from .forms import registrar_turno
-from .models import turno
 
-class crear_turno(CreateView):
-	model = turno
-	form_class = registrar_turno
-	template_name = 'turno.html'
-	
-class modificar_turno(UpdateView):
+class registro(CreateView):
 	model = turno
 	form_class = registrar_turno
 	template_name = 'turno.html'
 
-	
+
+def turno(request):
+	return render(request,'dashboard.html')
+
+def solicitar_turno(request):
+	return render(request,'call_solicitud.html')
+

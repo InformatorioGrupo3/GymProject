@@ -1,28 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil de usuario</title>
-</head>
-<body>
 
-    <p>Actividades</p>
-    <p>Horarios</p>
-    <p>etc...</p>
+{% load static %}
 
-<div>
-    <div>
-        <ul>
-            {% if user.is_authenticated %}
-                <li>Bienvenido {{ user.get_username }}</li>
-                <li><a href="{% url 'logout' %}">Cerrar sesion</a></li>
-            {% else %}
-                <li><a href="{% url 'login'%}?next={{request.login}}">Login</a></li>
-            {% endif %} 
+<div class="card" id="perfil">
+    <div class="card-header">
+        <h1 class="titulo text-center"> ¡Bienvenido {{ user.get_username }}! </h1>
+    </div>
+    <div class="card-body">
+        <img class="circular-square" 
+            src="#link_imagen" alt="Avatar" style="width:200px">
+        </img>
+        <ul class="list-group">
+            <li class="list-group-item"> 
+                <img src="{% static 'img/icons_userdata/user.svg' %}" style="width: 2.5rem; height: 2.5rem;">
+                {{ user.nombre }}
+                <span> {{ user.apellido}}</span>
+            </li>
+            <li class="list-group-item">
+                <img src="{% static 'img/icons_userdata/dni.svg' %}" style="width: 2.5rem; height: 2.5rem;">
+             {{ user.dni}} 
+            </li>
+            <li class="list-group-item">
+                <img src="{% static 'img/icons_userdata/calendario.svg' %}" style="width: 2.5rem; height: 2.5rem;">
+                 {{ user.fecha_nacimiento}} 
+            </li>
+            <li class="list-group-item">
+                <img src="{% static 'img/icons_userdata/correo.svg' %}" style="width: 2.5rem; height: 2.5rem;">
+                {{ user.email}} 
+            </li>
+            <li class="list-group-item">
+                <img src="{% static 'img/icons_userdata/tel.svg' %}" style="width: 2.5rem; height: 2.5rem;">
+                {{ user.telefono}}
+            </li>
         </ul>
     </div>
-</div>
-</body>
-</html>
+  </div>
+
