@@ -61,12 +61,16 @@ body{
 /* FORMUARIO REGISTRO */
 
 #container_form{
-	margin-top: 25px;
-    margin-right: 100px;
-    margin-bottom: 70px;
-    margin-left: 100px;
-	padding: 40px;
+	position:relative;
+	left: 20%;
+	right: 20%;
+	top:20%;
+	margin-top: 1.6rem;
+    margin-right: 6.3rem;
+    margin-bottom: 4.4rem;
+    margin-left: 6.3rem;
+	padding: 2.5rem;
 	background: #f8f9fa;
 }
 
-/*  */
+/* CONTACTO */
