@@ -26,7 +26,7 @@ urlpatterns = [
     path('registro/', include('apps.registro.urls')),
     path('registro/', include('django.contrib.auth.urls')),
     path('login/', include('apps.login.urls')),
-    #path('turno/', include('apps.turno.urls')),
+    path('turnos/', include('apps.turno.urls')),
     path('contacto/', TemplateView.as_view(template_name='contacto.html'), name='contacto'),
     path('informacion/', TemplateView.as_view(template_name='informacion.html'), name='informacion'),
     path('perfil/', TemplateView.as_view(template_name='perfil.html'), name='perfil'),

@@ -6,6 +6,7 @@ from apps.turno.models import *
 class AdminTurno(admin.ModelAdmin):
     model = turno
     list_display = (
+        'id',
         'actividad',
         'horario',
         'disponible',
@@ -20,6 +21,7 @@ class AdminTurno(admin.ModelAdmin):
 class AdminActividad(admin.ModelAdmin):
     model = actividad
     list_display = (
+        'id',
         'nombre',
         'cupo_max',
         'disponible',
