@@ -1,5 +1,6 @@
 from django.db import models
 from apps.registro.models import usuario
+from django.urls import reverse
 
 class actividad(models.Model):   
     nombre = models.CharField(max_length=50, null=False, blank=False, unique=True)
@@ -48,3 +49,6 @@ class turno(models.Model):
 
     def __str__(self):
         return f'{str(self.id).zfill(5)} {self.actividad} / {self.horario}'
+
+    def get_absolute_url(self):
+        return reverse('Detalles del turno: ', args=[self.id])

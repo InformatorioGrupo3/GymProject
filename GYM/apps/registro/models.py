@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.timezone import now
-from GYM.GYM.settings.local import MEDIA_URL, STATIC_URL
+from GYM.settings.local import MEDIA_URL, STATIC_URL
 from django.contrib.auth.models import User
 from django import forms
 
@@ -10,7 +10,8 @@ class usuario(models.Model):
     apellido = models.CharField(max_length=50, blank=False)
     fecha_nacimiento = models.DateField(blank=True, null=True)
     dni = models.PositiveIntegerField(unique=True, blank=False, help_text='DNI sin puntos')
-    contraseña = models.CharField(null=False, max_length=30)
+    password1 = models.CharField(null=False, max_length=30)
+    password2 = models.CharField(null=False, max_length=30)
     email = models.EmailField(blank=True)
     telefono = models.CharField(blank=True, null=True, max_length=20)
     foto = models.ImageField(upload_to= 'foto_usuario', null=True, blank=True)
