@@ -1,27 +1,9 @@
-<<<<<<< HEAD
-{% extends 'base.html' %}
-{% load static %}
-{% block titulo %}Registro{% endblock titulo %}
-
-{% block styles%}
-<style type="text/css">
-#container_form{
-	margin-top: 25px;
-    margin-right: 100px;
-    margin-bottom: 70px;
-    margin-left: 100px;
-	padding: 40px;
-	background: #f8f9fa;
-}
-</style>
-{% endblock styles %}
-=======
->>>>>>> f4c7edf5f9d9ac49093d720f37fcbd3bbe4953ec
 
 
 <div id="container_form" class="container-xs">
 	<form method="post" action="" enctype="multipart/form-data" class="col-12">
 		{% csrf_token %}
+		{{ form.errors }}
 		<!-- Elementos fila 1 --> 
 	  	<div class="form-row">
 	  		<!-- Columnas de la fila 1 -->
