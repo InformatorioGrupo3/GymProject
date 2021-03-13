@@ -27,7 +27,6 @@
 }
 
 
-
 /* PLANTILLA BASE */
 /* Este es para hacer el fondo negro*/
 body{
@@ -67,9 +66,12 @@ body{
     margin-left: 100px;
 	padding: 20px;
 	background: #f8f9fa;
+	/*display: flex;
+	justify-content: space-between;*/
 }
-
+/*
 	margin: 25px 50px 75px 100px;
 	padding: 70px;
 	background: #f8f9fa;
 }
+*/

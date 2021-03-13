@@ -1,14 +1,9 @@
-from django.shortcuts import render, redirect
-from .forms import registrar_cliente
-from .models import usuario
-from django.views.generic import CreateView
-from django.contrib.auth.decorators import login_required
+from django.urls import reverse_lazy
+from django.views.generic.edit import CreateView
 
-@login_required
-def registro(request):
-	return registrar_cliente
+from .forms import *
 
-class registro_usuario(CreateView):
-	model = usuario
-	form_class = registrar_cliente
-	template_name = 'registro.html'
+class registrar_usuario_vista(CreateView):
+    form_class = registrar_usuario
+    success_url = reverse_lazy('login')
+    template_name = 'registro.html'

@@ -58,11 +58,19 @@
       	<li class="nav-item {% if request.path == '/contacto/' %}active{% endif %}">
         	<a class="nav-link" href="{% url 'contacto' %}">CONTACTO</a>
       	</li>
+		  {% if user.is_authenticated %}
+		<li class="nav-item {% if request.path == '/actividad/' %}active{% endif %}"></li>
+        	<a class="nav-link" href="{% url 'turnos' %}">TURNOS</a>
+      	</li>
+		  {% endif %}
+
     </ul>
 
     <!-- Botones de ingreso -->
+
   <div class="container_btn">
   {% if user.is_authenticated %}
+  <a class="texto">¡Hola, {{ user.first_name }}!</a>
     <a href="{% url 'logout' %}" 
        class="btn btn-warning my-2 my-sm-0" 
        role="button" 
@@ -77,6 +85,7 @@
        role="button" 
        aria-pressed="true">Registrarse</a>
   {% endif %}
+
    </div>
 
   </div>
@@ -93,7 +102,7 @@
 <footer class="footer mt-auto py-3">
   <div class="container">
     <span class="text-muted">Integrantes:</span>
-    <span class="text-muted">Lista con nuestros nombres :) </span>
+    <span class="text-muted">GRUPO 3</span>
   </div>
 </footer>
 	

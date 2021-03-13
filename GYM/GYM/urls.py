@@ -15,12 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic.base import TemplateView
 
 # Cada App tiene su configuración de URL y eso es lo que llamo acá
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('apps.inicio.urls')),
+    path('', TemplateView.as_view(template_name='index.html'), name='index'),
+    #path('', include('apps.inicio.urls')),
     path('registro/', include('apps.registro.urls')),
+    path('registro/', include('django.contrib.auth.urls')),
     path('login/', include('apps.login.urls')),
+    path('turnos/', include('apps.turno.urls')),
+    path('contacto/', TemplateView.as_view(template_name='contacto.html'), name='contacto'),
+    path('informacion/', TemplateView.as_view(template_name='informacion.html'), name='informacion'),
+    path('perfil/', TemplateView.as_view(template_name='perfil.html'), name='perfil'),
 ]

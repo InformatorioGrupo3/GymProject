@@ -1,26 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block titulo %}INICIO{% endblock titulo %}
+{% block titulo %}TURNO{% endblock titulo %}
 <!-- Los botones del Navbar cambian acá -->
-{% block botones %} {% endblock botones %}
 
-{% block contenido %} 
- <div>
-    <form action="turno.html" method="post">
-        <div>
-            <div class="form-group col-md-6">
-                <label for="{{ form.contraseña.id_for_label }}">Actividad</label>
-                {{ form.actividad }}
-            </div>
-            <div class="form-group col-md-6">
-                <label for="{{ form.foto.id_for_label }}">Horario:</label>
-                    <!-- COMPROBAR DISPONIBILIDAD DE HORARIO -->
-                {{ form.horario }}
-            </div>
-        </div>
-        <button type="submit">Registrar turno</button>
-    </form>
+{% block contenido %}
+<div>
+        <h1 class="titulo">TURNOS DISPONIBLES PARA {{ object_list.0.actividad|upper }}</h1>
+        {% for turno in object_list %}
+        <li class="texto">{{ turno.horario }}</li>
+        {% endfor %}
 </div>
-
+<div>
+<a class="texto" href="{% url 'turnos' %}" >VOLVER</a>
+</div>
 
 {% endblock contenido%}

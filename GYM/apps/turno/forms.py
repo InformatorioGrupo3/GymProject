@@ -1,12 +1,15 @@
 from django import forms
 from django.forms import ModelForm
-from GYM.apps.registro.models import usuario
-from .models import turno
+from apps.registro.models import *
+from .models import *
 
 class registrar_turno(forms.ModelForm):
 	class Meta:
 		model = turno
 		fields = '__all__'
-	
-	def __str__(self):
-		return super(usuario).__str__()
+
+
+class ver_turno(forms.ModelForm):
+	class Meta:
+		model = turno
+		fields = '__all__'

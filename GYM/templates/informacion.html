@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block titulo %}LOGIN{% endblock titulo %}
+{% block titulo %}INFORMACIÓN{% endblock titulo %}
 
 
 <!-- Los botones del Navbar cambian acá -->
-{% block botones %} {% endblock botones %}
 
 
 {% block contenido %} 
@@ -74,6 +73,9 @@
     <li data-target="#carouselBasicExample" 
         data-slide-to="2">
     </li>
+    <li data-target="#carouselBasicExample" 
+        data-slide-to="3">
+    </li>
   </ol>
 
   <!-- Inner -->
@@ -86,9 +88,7 @@
         </center>
       </p>
       <p>
-        <center>entrenamiento personalizado 
-        centrado en tus metas y 
-        destinado a mejorar tu calidad de vida</center>
+      <center>Entrenamiento personalizado, destinado a mejorar tu calidad de vida.</center>
        </p>
       <img src="{% static 'img/funcional1.jpg' %}"
            class="d-block w-100"
@@ -104,7 +104,7 @@
       </p>
       <p>
         <center>
-          Trabajo aeróbico de alta intensidad sobre bicicleta fija, coreografiado
+          Trabajo aeróbico de alta intensidad sobre bicicleta fija, coreografiado.
         </center>
       </p>
       <img src="{% static 'img/spinning1.jpg' %}"
@@ -121,31 +121,13 @@
       </p>
       <p>
         <center>
-          Se busca no sólo moldear la figura, sino lograr un estado totalmente saludable
+          Se busca no sólo moldear la figura, sino lograr un estado totalmente saludable.
         </center>
       </p>
       <img src="{% static 'img/musculacion1.jpg' %}"
         class="d-block w-100"
         alt="actividad"/>
     </div>
-
-
-    <div class="carousel-item">
-      <p>
-        <center>
-          MUSCULACION
-        </center>
-      </p>
-      <p>
-        <center>
-          Se busca no sólo moldear la figura, sino lograr un estado totalmente saludable
-        </center>
-      </p>
-      <img src="{% static 'img/musculacion1.jpg' %}"
-        class="d-block w-100"
-        alt="actividad"/>
-    </div>
-
 
     <div class="carousel-item">
       <p>
@@ -155,7 +137,7 @@
       </p>
       <p>
         <center>
-          Cada clase de Zumba está diseñada para juntarnos a bailar y sudar
+          Cada clase de Zumba está diseñada para juntarnos a bailar y sudar.
         </center>
       </p>
       <img src="{% static 'img/zumba.jpg' %}"

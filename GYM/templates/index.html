@@ -2,11 +2,18 @@
 {% load static %}
 {% block titulo %}INICIO{% endblock titulo %}
 {% block contenido %}
-  <!--   ================ PRINCIPAL ================   -->
+  <!--   ================ PRINCIPAL ================   
+  {% if user.is_authenticated %}
+    Hi {{ user.username }}!
+  <p><a href="{% url 'logout' %}">Log Out</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Ingresar</a> |
+  <a href="{% url 'registro' %}">Registrarse</a>
+{% endif %} -->
   <div class="conteiner-fluid">
     <img src="{% static 'img/index2.jpg' %}">
     style="max-width: 100%;"
   </div>
-
 
 {% endblock contenido %}
