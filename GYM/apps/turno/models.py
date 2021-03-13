@@ -1,32 +1,53 @@
-# from django.db import models
-# from apps.registro.models import usuario
+from django.db import models
+from apps.registro.models import *
 
-# class actividades(models.Model):
-#     Zumba = 'Zumba'
-#     Funcional = 'Funcional'
-#     Aerobic = 'Aerobic'
-#     Musculacion = 'Musculacion'
-#     Spinning = 'Spinning'
-#     actividades_gym = [
-#         (None, 'Seleccione una opcion'),
-#         (Zumba, 'Zumba'),
-#         (Funcional, 'Funcional'),
-#         (Aerobic, 'Aerobic'),
-#         (Musculacion, 'Musculacion'),
-#         (Spinning, 'Spinning'),
-#     ]
-#     actividad = models.CharField(
-#         max_length = 12,
-#         choices = actividades_gym,
-#         default = None,
-#     )
+class actividad(models.Model):   
+    nombre = models.CharField(max_length=50, null=False, blank=False, unique=True)
+    cupo_max = models.PositiveSmallIntegerField(
+        verbose_name='Cupo máximo de personas',
+        blank=False,
+        null=False,
+        )
+    descripcion = models.TextField(blank=True, max_length=200, default='')
+    disponible = models.BooleanField(default=True)
+    
+    class Meta:
+        db_table = 'actividades'
+        ordering = ['nombre', 'cupo_max']
+        verbose_name = 'actividad'
+        verbose_name_plural = 'actividades'
 
 
-# class turno(models.Model, usuario, actividades):
-#     usuario = models.ManyToManyField(usuario, on_delete=models.CASCADE)
-#     actividad = models.ForeignKey(actividades, on_delete=models.CASCADE)
-#     cupo = models.CharField(max_length=50)
-#     horario = models.DateField(auto_now_add=True)
+    def __str__(self):
+        return self.nombre
 
-#     def __str__(self):
-#         return super.usuario, 'Actividad: {}\n Horario:{}'.format(self.actividad, self.horario)
+
+class turno(models.Model):
+    usuario = models.ManyToManyField(
+        usuario,
+        verbose_name='usuarios en este turno',
+        name='usuario',
+        blank=True,
+        limit_choices_to={
+            'is_active':True,
+            'is_staff':False,
+        }
+    )
+    
+    actividad = models.ForeignKey(
+        actividad,
+        on_delete=models.CASCADE,
+        name='actividad',
+        limit_choices_to={'disponible':True},
+        )
+    cupo_actual = models.PositiveSmallIntegerField(default=0, editable=False,)
+    horario = models.DateTimeField()
+    disponible = models.BooleanField(default=True)
+
+    class Meta:
+        db_table = 'turnos'
+        ordering = ['actividad', 'horario']
+        verbose_name = 'turno'
+        verbose_name_plural = 'turnos'
+        unique_together = ('actividad', 'horario')
+

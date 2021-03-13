@@ -27,7 +27,6 @@
 }
 
 
-
 /* PLANTILLA BASE */
 /* Este es para hacer el fondo negro*/
 body{
@@ -58,6 +57,7 @@ body{
 }
 
 
+<<<<<<< HEAD
 /* FORMUARIO REGISTRO */
 
 #container_form{
@@ -74,3 +74,23 @@ body{
 }
 
 /* CONTACTO */
+=======
+/* PLANTILLA REGISTRO */
+/* Contenedor del formulario */
+.container_form{
+	margin-top: 25px;
+    margin-right: 100px;
+    margin-bottom: 70px;
+    margin-left: 100px;
+	padding: 20px;
+	background: #f8f9fa;
+	/*display: flex;
+	justify-content: space-between;*/
+}
+/*
+	margin: 25px 50px 75px 100px;
+	padding: 70px;
+	background: #f8f9fa;
+}
+*/
+>>>>>>> rama_backend_01

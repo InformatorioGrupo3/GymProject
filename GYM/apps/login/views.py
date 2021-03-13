@@ -8,7 +8,8 @@ from django.http.response import HttpResponseRedirect
 class login_form(FormView):
 	form_class = AuthenticationForm
 	template_name = 'login.html'
-	success_url = reverse_lazy('perfil') # EDITAR LA PLANTILLA
+	success_url = reverse_lazy('index')
+	#success_url = reverse_lazy('perfil') # EDITAR LA PLANTILLA
 
 	def form_valid(self, form):
 		login(self.request, form.get_user())
@@ -20,7 +21,7 @@ class login_form(FormView):
 		return super().form_invalid(form)
 
 class logout_user(RedirectView):
-	pattern_name = 'loggin'
+	pattern_name = 'login'
 
 	def dispatch(self, request, *args, **kwargs):
 		logout(request)

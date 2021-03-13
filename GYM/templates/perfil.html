@@ -14,8 +14,8 @@
         <ul class="list-group">
             <li class="list-group-item"> 
                 <img src="{% static 'img/icons_userdata/user.svg' %}" style="width: 2.5rem; height: 2.5rem;">
-                {{ user.nombre }}
-                <span> {{ user.apellido}}</span>
+                {{ user.first_name }}
+                <span> {{ user.last_name}}</span>
             </li>
             <li class="list-group-item">
                 <img src="{% static 'img/icons_userdata/dni.svg' %}" style="width: 2.5rem; height: 2.5rem;">
@@ -33,7 +33,3 @@
                 <img src="{% static 'img/icons_userdata/tel.svg' %}" style="width: 2.5rem; height: 2.5rem;">
                 {{ user.telefono}}
             </li>
-        </ul>
-    </div>
-  </div>
-

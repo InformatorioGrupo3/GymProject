@@ -1,5 +1,3 @@
-
-
 <div id="container_form" class="col-6">
 	<form method="post" action="" enctype="multipart/form-data" class="col-12">
 		{% csrf_token %}
@@ -7,14 +5,14 @@
 	  	<div class="form-row">
 	  		<!-- Columnas de la fila 1 -->
 		    <div class="form-group col-md-6">
-				<label for="{{ form.nombre.id_for_label }}">Nombre:</label>
+				<label for="{{ form.first_name.id_for_label }}">Nombre:</label>
 				<br>
-				<span class="offset-md-3">{{ form.nombre }}</span>
+				<span class="offset-md-3">{{ form.first_name }}</span>
 		    </div>
 		    <div class="form-group col-md-6">
-				<label for="{{ form.apellido.id_for_label }}">Apellido:</label>
+				<label for="{{ form.last_name.id_for_label }}">Apellido:</label>
 				<br>
-				<span class="offset-md-3">{{ form.apellido }}</span>
+				<span class="offset-md-3">{{ form.last_name }}</span>
 		    </div>
 		</div>
 		<!-- Elementos fila 2 --> 

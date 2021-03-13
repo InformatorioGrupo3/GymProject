@@ -1,13 +1,48 @@
-from django import forms
-from .models import usuario
 
-class registrar_cliente(forms.ModelForm):
-	class Meta:
-		model = usuario
-		widgets = {
-        'contraseña': forms.PasswordInput(),
-    }
-		fields = '__all__'
-	
-	def __str__(self):
-		return super(usuario).__str__()
+from django import forms
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from .models import *
+
+class registrar_usuario(UserCreationForm):
+    class Meta:
+        model = usuario
+        fields = (
+            'username',
+            'email',
+            'first_name',
+            'last_name',
+            'dni',
+            'fecha_nacimiento',
+            'telefono',
+            'foto',
+        )
+         widgets = {
+            'first_name':forms.TextInput(attrs={'class':'form-control'}),
+            'last_name':forms.TextInput(attrs={'class':'form-control'}),
+            'dni':forms.TextInput(attrs={'class':'form-control'}),
+            'fecha_nacimiento':forms.NumberInput(attrs={'type': 'date','label':'Fecha de Nacimiento','class':'form-control'}),
+            'telefono':forms.TextInput(attrs={'placeholder':'3624xxxxxx','class':'form-control'}),
+            'email':forms.EmailInput(attrs={'placeholder':'ejemplo@gmail.com','class': 'form-control',}),
+        }  
+
+class editar_usuario(UserChangeForm):
+    class Meta:
+        model = usuario
+        fields = (
+            'username',
+            'email',
+            'first_name',
+            'last_name',
+            'dni',
+            'fecha_nacimiento',
+            'telefono',
+            'foto',
+        )
+         widgets = {
+            'first_name':forms.TextInput(attrs={'class':'form-control'}),
+            'last_name':forms.TextInput(attrs={'class':'form-control'}),
+            'dni':forms.TextInput(attrs={'class':'form-control'}),
+            'fecha_nacimiento':forms.NumberInput(attrs={'type': 'date','label':'Fecha de Nacimiento','class':'form-control'}),
+            'telefono':forms.TextInput(attrs={'placeholder':'3624xxxxxx','class':'form-control'}),
+            'email':forms.EmailInput(attrs={'placeholder':'ejemplo@gmail.com','class': 'form-control',}),
+        }  

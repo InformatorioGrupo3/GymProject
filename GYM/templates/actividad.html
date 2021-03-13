@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %}ACTIVIDADES{% endblock titulo %}
+
+{% block contenido %}
+<h5 class="titulo">BUSCAR TURNOS POR ACTIVIDAD:</h5>
+<div>
+        {% for actividad in object_list %}
+        {% if actividad.disponible %}
+        <li class="texto">
+                <a class="texto" href="{% url 'turno_actividad' actividad.nombre %}">
+                        {{ actividad }}
+                </a>
+        </li>
+        {% endif %}
+        {% endfor %}
+</div>
+{% endblock contenido%}
