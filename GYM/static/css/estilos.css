@@ -56,41 +56,100 @@ body{
 	right: 0px;
 }
 
+/* FORMULARIO LOGIN */
+#login_card{
+	margin-top: 2.5rem;
+}
 
-<<<<<<< HEAD
-/* FORMUARIO REGISTRO */
+/* FORMULARIO REGISTRO */
+#registro_card{
+	margin-top: 2.5rem;
 
-#container_form{
-	position:relative;
-	left: 20%;
-	right: 20%;
-	top:20%;
-	margin-top: 1.6rem;
-    margin-right: 6.3rem;
-    margin-bottom: 4.4rem;
-    margin-left: 6.3rem;
-	padding: 2.5rem;
-	background: #f8f9fa;
+}
+#registro_contenido{
+	margin: auto;
+    padding: 2rem;
+
+}
+
+/* INFORMACIÓN */
+h1{
+    margin: auto;
+  }
+
+#contenido_carrousel{
+  position: relative;
+  max-width: 800px;
+  left: 25%;
+  right: 25%;
+  top: 10%;
+}
+
+#carouselBasicExample{
+  padding-top: 10px;
+  padding-right: 30px;
+  padding-bottom: 40px;
+  padding-left: 30px;   
+}
+
+#cont_bioseguridad{
+  margin: auto;
 }
 
 /* CONTACTO */
-=======
-/* PLANTILLA REGISTRO */
-/* Contenedor del formulario */
-.container_form{
-	margin-top: 25px;
-    margin-right: 100px;
-    margin-bottom: 70px;
-    margin-left: 100px;
-	padding: 20px;
-	background: #f8f9fa;
-	/*display: flex;
-	justify-content: space-between;*/
+#contacto_container{
+	color: #D4B9B9;
 }
-/*
-	margin: 25px 50px 75px 100px;
-	padding: 70px;
-	background: #f8f9fa;
+
+.separador{
+	border: 1px solid red;
 }
-*/
->>>>>>> rama_backend_01
+
+#btn_comentario{
+	position: relative;
+	left: 75%;
+}
+
+#lista_contacto{
+	border-left: 5px solid red;
+  	list-style-type: none;
+
+}
+
+/* DASHBOARD --> Perfil + Turnos */
+/* 1- Perfil */
+
+.circular-square {
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+/* 2- Turno */
+
+
+#raw_horario::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#dias {
+  float: right;
+}
+
+#horas {
+  float: right;
+}
+
+#horario_contenido{
+  margin: auto;
+  padding: auto;
+  overflow-x: auto;
+  width: 80%;
+  max-width: 1000px;
+  overflow: auto;
+}

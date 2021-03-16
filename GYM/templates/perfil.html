@@ -1,15 +1,13 @@
 
 {% load static %}
 
-
-
 <div class="card" id="perfil">
     <div class="card-header">
         <h1 class="titulo text-center"> ¡Bienvenido {{ user.get_username }}! </h1>
     </div>
     <div class="card-body">
         <img class="circular-square" 
-            src="#link_imagen" alt="Avatar" style="width:200px">
+            src="{{ user.foto }}" alt="Avatar" style="width:200px">
         </img>
         <ul class="list-group">
             <li class="list-group-item"> 
@@ -33,3 +31,9 @@
                 <img src="{% static 'img/icons_userdata/tel.svg' %}" style="width: 2.5rem; height: 2.5rem;">
                 {{ user.telefono}}
             </li>
+        </ul>
+    </div>
+  </div>
+
+
+

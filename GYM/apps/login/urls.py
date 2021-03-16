@@ -6,7 +6,7 @@ from apps.login.views import login_form, logout_user
 # Si agrego funciones en la view de la app login debo agregar los path acá
 
 urlpatterns = [
-    path('', login_form.as_view(), name='login'),
+    path('login/', login_form.as_view(), name='login'),
     path('logout/', views.logout_user.as_view(), name='logout'), # CORREGIR LOGOUT
     # path('logout/', views.logout, name='logout'),
     

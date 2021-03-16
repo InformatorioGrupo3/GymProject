@@ -42,7 +42,7 @@ PASSWORD_HASHERS = [
 ]
 '''
 # Elegir la DB para usar en local
-# DATABASES = db.MYSQL
+#DATABASES = db.MYSQL
 DATABASES = db.SQLITE
 
 # En caso de que localmente utilice un horario distinto al base

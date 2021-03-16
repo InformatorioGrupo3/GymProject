@@ -1,5 +1,7 @@
 from pathlib import Path
 import os
+import MySQLdb
+
 
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
@@ -13,10 +15,11 @@ SQLITE = {
 MYSQL = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db_gym_patito', # --> NOMBRE DE LA BASE YA CREADA
+        'NAME': 'gympatito', 
         'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '',     # Vacío = localhost
+        'PASSWORD': '',
+        'HOST': 'localhost',     
         'PORT': '3306',
     }
 }
+
