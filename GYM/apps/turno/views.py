@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 class turno_actividad(ListView):
 	#model = turno
 	context_object_name = 'lista_turnos'
-	template_name = 'turno.html'
+	template_name = 'actividad.html'
 	ordering = ['-horario']
 	
 	def get_queryset(self):

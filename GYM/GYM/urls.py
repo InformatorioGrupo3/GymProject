@@ -17,12 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import TemplateView
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 # Cada App tiene su configuración de URL y eso es lo que llamo acá
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='index.html'), name='index'),
-    #path('', include('apps.inicio.urls')),
     path('registro/', include('apps.registro.urls')),
     path('registro/', include('django.contrib.auth.urls')),
     path('login/', include('apps.login.urls')),
@@ -33,3 +35,5 @@ urlpatterns = [
     path('perfil/', TemplateView.as_view(template_name='perfil.html'), name='perfil'),
 
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

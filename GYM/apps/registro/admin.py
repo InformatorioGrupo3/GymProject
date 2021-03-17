@@ -15,6 +15,7 @@ class administrador(UserAdmin):
         'email',
         'dni',
         'fecha_nacimiento',
+        'foto',
         #'password',
         'date_joined',
         'is_active',

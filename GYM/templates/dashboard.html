@@ -1,48 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block titulo %}Turnos{% endblock titulo %}
-{% block styles %}
-<style>
-
-/* 1- Perfil */
-
-.circular-square {
-  border-radius: 50%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
-}
-
-
-/* 2- Turno */
-
-
-#raw_horario::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-#dias {
-  float: right;
-}
-
-#horas {
-  float: right;
-}
-
-#horario_contenido{
-  margin: auto;
-  padding: auto;
-  overflow-x: auto;
-  width: 80%;
-  max-width: 1000px;
-  overflow: auto;
-}
-
-</style>
-{% endblock styles %}
 
 
 {% block contenido %}

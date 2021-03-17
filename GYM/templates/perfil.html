@@ -1,39 +1,56 @@
-
+{% extends 'base.html' %}
 {% load static %}
+{% block titulo %}Perfil{% endblock titulo %}
 
-<div class="card" id="perfil">
-    <div class="card-header">
-        <h1 class="titulo text-center"> ¡Bienvenido {{ user.get_username }}! </h1>
+{% block contenido %}
+<div class="row">
+    <div class="col-4">
+        <div class="card bg-transparent border-warning" id="perfil">
+            <div class="card-header border-warning">
+                <h1 class="titulo text-center"> Foto de Usuario </h1>
+            </div>
+            <div class="card-body">
+                <img class="circular-square" 
+                    src="{{ request.user.foto.url }}" alt="Avatar" >
+                </img>
+            </div>
+        </div>
     </div>
-    <div class="card-body">
-        <img class="circular-square" 
-            src="{{ user.foto }}" alt="Avatar" style="width:200px">
-        </img>
-        <ul class="list-group">
-            <li class="list-group-item"> 
-                <img src="{% static 'img/icons_userdata/user.svg' %}" style="width: 2.5rem; height: 2.5rem;">
-                {{ user.first_name }}
-                <span> {{ user.last_name}}</span>
-            </li>
-            <li class="list-group-item">
-                <img src="{% static 'img/icons_userdata/dni.svg' %}" style="width: 2.5rem; height: 2.5rem;">
-             {{ user.dni}} 
-            </li>
-            <li class="list-group-item">
-                <img src="{% static 'img/icons_userdata/calendario.svg' %}" style="width: 2.5rem; height: 2.5rem;">
-                 {{ user.fecha_nacimiento}} 
-            </li>
-            <li class="list-group-item">
-                <img src="{% static 'img/icons_userdata/correo.svg' %}" style="width: 2.5rem; height: 2.5rem;">
-                {{ user.email}} 
-            </li>
-            <li class="list-group-item">
-                <img src="{% static 'img/icons_userdata/tel.svg' %}" style="width: 2.5rem; height: 2.5rem;">
-                {{ user.telefono}}
-            </li>
-        </ul>
-    </div>
-  </div>
 
+    <div class="col-6">
+        <div class="card bg-transparent border-warning" id="perfil">
+            <div class="card-header border-warning">
+                <h1 class="titulo text-center"> Datos personales </h1>
+            </div>
+        <div class="card-body">
+            
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-warning"> 
+                    <img src="{% static 'img/icons_userdata/user.svg' %}" style="width: 2.5rem; height: 2.5rem;">
+                    <h4 class="datos_user">{{ user.first_name }}
+                    {{ user.last_name}}</h4>
+                </li>
+                <li class="list-group-item list-group-item-warning">
+                    <img src="{% static 'img/icons_userdata/dni.svg' %}" style="width: 2.5rem; height: 2.5rem;">
+                 <h4 class="datos_user">{{ user.dni}}</h4> 
+                </li>
+                <li class="list-group-item list-group-item-warning">
+                    <img src="{% static 'img/icons_userdata/calendario.svg' %}" style="width: 2.5rem; height: 2.5rem;">
+                     <h4 class="datos_user">{{ user.fecha_nacimiento}} </h4>
+                </li>
+                <li class="list-group-item list-group-item-warning">
+                    <img src="{% static 'img/icons_userdata/correo.svg' %}" style="width: 2.5rem; height: 2.5rem;">
+                    <h4 class="datos_user">{{ user.email}}</h4> 
+                </li>
+                <li class="list-group-item list-group-item-warning">
+                    <img src="{% static 'img/icons_userdata/tel.svg' %}" style="width: 2.5rem; height: 2.5rem;">
+                    <h4 class="datos_user">{{ user.telefono}}</h4>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock contenido %}
 
 

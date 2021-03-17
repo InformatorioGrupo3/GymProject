@@ -62,9 +62,21 @@
       </li>
 
          {% if user.is_authenticated %}
-      <li class="nav-item {% if request.path == '/turno/' %}active{% endif %}">
-        <a class="nav-link" href="{% url 'turno' %}">TURNOS</a>
+         
+      <li class="nav-item {% if request.path == '/perfil/' %}active{% endif %}" >
+        <a class="nav-link" href="{% url 'perfil' %}" id="usuario">PERFIL DE USUARIO</a>
       </li>
+      <li class="nav-item {% if request.path == '#' %}active{% endif %}" >
+        <a class="nav-link" href="#" id="usuario">MIS TURNOS</a>
+      </li>
+      <li class="nav-item {% if request.path == '#' %}active{% endif %}" >
+        <a class="nav-link" href="#" id="usuario">SACAR TURNO</a>
+      </li>
+      <li class="nav-item {% if request.path == '#' %}active{% endif %}" >
+        <a class="nav-link" href="#" id="usuario">ACTIVIDADES</a>
+      </li>
+    
+     
         {% endif %}
     </ul>
 
@@ -74,7 +86,7 @@
   <div class="container_btn">
   {% if user.is_authenticated %}
     <a class="texto">¡Hola, {{ user.first_name }}!</a>
-
+    
     <a href="{% url 'logout' %}" 
        class="btn btn-warning my-2 my-sm-0" 
        role="button" 
