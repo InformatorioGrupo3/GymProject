@@ -8,9 +8,10 @@ class AdminTurno(admin.ModelAdmin):
     list_display = (
         'id',
         'actividad',
+        'fecha',
         'horario',
-        'disponible',
         'cupo_actual',
+        'disponible',
         )
     list_filter = (
         'disponible',
@@ -21,11 +22,11 @@ class AdminTurno(admin.ModelAdmin):
 class AdminActividad(admin.ModelAdmin):
     model = actividad
     list_display = (
-        'id',
         'nombre',
         'cupo_max',
         'disponible',
         'descripcion',
+        'id',
         )
     list_filter = ('disponible',)
 

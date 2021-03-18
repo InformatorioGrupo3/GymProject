@@ -45,6 +45,10 @@ class turno(models.Model):
     horario = models.TimeField()
     disponible = models.BooleanField(default=True)
 
+    @property
+    def nombre(self):
+        pass
+    
     class Meta:
         db_table = 'turnos'
         ordering = ['actividad', 'horario']
