@@ -15,6 +15,8 @@ class registrar_usuario(UserCreationForm):
             'fecha_nacimiento',
             'telefono',
             'foto',
+            'password1',
+            'password2',
         )
         widgets = {
             'username':forms.TextInput(attrs={'class':'form-control'}),

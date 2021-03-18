@@ -32,8 +32,7 @@ urlpatterns = [
     path('turnos/', include('apps.turno.urls')),
     path('contacto/', TemplateView.as_view(template_name='contacto.html'), name='contacto'),
     path('informacion/', TemplateView.as_view(template_name='informacion.html'), name='informacion'),
-    path('perfil/', TemplateView.as_view(template_name='perfil.html'), name='perfil'),
-
+    path('perfil/', TemplateView.as_view(template_name='perfil.html'), name='perfil')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
