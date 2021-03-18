@@ -17,7 +17,6 @@ class actividad(models.Model):
         verbose_name = 'actividad'
         verbose_name_plural = 'actividades'
 
-
     def __str__(self):
         return self.nombre
 
@@ -40,8 +39,10 @@ class turno(models.Model):
         name='actividad',
         limit_choices_to={'disponible':True},
         )
-    cupo_actual = models.PositiveSmallIntegerField(default=0, editable=False,)
-    horario = models.DateTimeField()
+    cupo_actual = models.PositiveSmallIntegerField(default=0, editable=False)
+    #cupo_max = models.PositiveSmallIntegerField(default=20)
+    fecha = models.DateField()
+    horario = models.TimeField()
     disponible = models.BooleanField(default=True)
 
     class Meta:
@@ -49,5 +50,5 @@ class turno(models.Model):
         ordering = ['actividad', 'horario']
         verbose_name = 'turno'
         verbose_name_plural = 'turnos'
-        unique_together = ('actividad', 'horario')
+        unique_together = ('actividad', 'horario', 'fecha')
 
