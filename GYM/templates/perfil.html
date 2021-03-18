@@ -3,6 +3,7 @@
 {% block titulo %}Perfil{% endblock titulo %}
 
 {% block contenido %}
+
 <div class="row">
     <div class="col-4">
         <div class="card bg-transparent border-warning" id="perfil">
@@ -11,9 +12,10 @@
             </div>
             <div class="card-body">
                 <img class="circular-square" 
-                    src="{{ request.user.foto.url }}" alt="Avatar" >
+                    src="{{ request.user.foto.url }}" alt="Foto Usuario" >
                 </img>
             </div>
+            <br>
         </div>
     </div>
 
@@ -47,10 +49,15 @@
                     <h4 class="datos_user">{{ user.telefono}}</h4>
                 </li>
             </ul>
+            <br>
+            <a type="button" 
+                    class="btn btn-outline-light float-right"
+                    href="{% url 'editar' user.id %}">EDITAR</a>
         </div>
         </div>
     </div>
 </div>
+
 {% endblock contenido %}
 
 

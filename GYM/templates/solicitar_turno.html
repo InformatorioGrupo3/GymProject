@@ -1,4 +1,8 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %}SOLICITAR TURNO{% endblock titulo %}
 
+{% block contenido %} 
 <div class="col-sm-10" id="horario_contenido" > 
     <div class="btn-group" id="dias">
         <button type="button" class="btn-lg btn-warning" style="margin-left: -0.3rem;"> lunes </button>
@@ -103,3 +107,4 @@
 </div>
 </div>
 
+{% endblock contenido %}
