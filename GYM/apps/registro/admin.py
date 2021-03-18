@@ -20,6 +20,7 @@ class administrador(UserAdmin):
         'is_active',
         'is_staff',
         'is_superuser',
+        'id',
     )
 
 admin.site.register(usuario, administrador)

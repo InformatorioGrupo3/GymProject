@@ -8,6 +8,8 @@ class registrar_usuario(UserCreationForm):
         model = usuario
         fields = (
             'username',
+            'password1',
+            'password2',
             'email',
             'first_name',
             'last_name',
@@ -22,6 +24,7 @@ class editar_usuario(UserChangeForm):
         model = usuario
         fields = (
             'username',
+            'password',
             'email',
             'first_name',
             'last_name',

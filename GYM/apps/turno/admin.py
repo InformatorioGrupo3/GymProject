@@ -1,31 +1,37 @@
 from django.contrib import admin
-from apps.turno.models import *
+from .models import *
 
 # Register your models here.
 
 class AdminTurno(admin.ModelAdmin):
     model = turno
     list_display = (
-        'id',
+        'nombre',
         'actividad',
+        'fecha',
         'horario',
-        'disponible',
         'cupo_actual',
+        'cupo_max',
+        'disponible',
+        'id',
         )
     list_filter = (
-        'disponible',
         'actividad',
         )
-    readonly_fields = ('cupo_actual',) 
+    readonly_fields = (
+        'cupo_actual',
+        #'disponible',
+        ) 
 
 class AdminActividad(admin.ModelAdmin):
     model = actividad
     list_display = (
-        'id',
         'nombre',
+        'nombre_corto',
         'cupo_max',
         'disponible',
         'descripcion',
+        'id',
         )
     list_filter = ('disponible',)
 

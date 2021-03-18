@@ -6,8 +6,8 @@
 {% block contenido %}
 <div>
         <h1 class="titulo">TURNOS DISPONIBLES PARA {{ object_list.0.actividad|upper }}</h1>
-        {% for turno in object_list %}
-        <li class="texto">{{ turno.horario }}</li>
+        {% for turno in lista_turnos %}
+        <li class="texto">{{ turno.fecha }} - {{ turno.horario }}</li>
         {% endfor %}
 </div>
 <div>

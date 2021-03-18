@@ -34,13 +34,7 @@ TEMPLATES = [
     },
 ]
 
-'''
-# Para encriptar contraseñas de usuarios
-PASSWORD_HASHERS = [
-    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
-    'accounts.hashers.PBKDF2WrappedSHA1PasswordHasher',
-]
-'''
+
 # Elegir la DB para usar en local
 # DATABASES = db.MYSQL
 DATABASES = db.SQLITE
