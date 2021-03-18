@@ -48,7 +48,7 @@ class turno(models.Model):
     @property
     def nombre(self):
         pass
-    
+
     class Meta:
         db_table = 'turnos'
         ordering = ['actividad', 'horario']
