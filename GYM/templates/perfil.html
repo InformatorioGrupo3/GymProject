@@ -11,8 +11,16 @@
                 <h1 class="titulo text-center"> Foto de Usuario </h1>
             </div>
             <div class="card-body">
-                <img class="circular-square" 
-                    src="{{ request.user.foto.url }}" alt="Foto Usuario" >
+                {% if user.foto %}
+                <img class="circular-square"
+                     src="{{ request.user.foto.url }}" alt="Foto Usuario">
+
+                {% else %}
+
+                <img class="circular-square"
+                     src="{% static 'img/foto_user/no_icon.png' %}" alt="Foto Usuario">
+
+                {% endif %}
                 </img>
             </div>
             <br>
@@ -24,36 +32,37 @@
             <div class="card-header border-warning">
                 <h1 class="titulo text-center"> Datos personales </h1>
             </div>
-        <div class="card-body">
-            
-            <ul class="list-group">
-                <li class="list-group-item list-group-item-warning"> 
-                    <img src="{% static 'img/icons_userdata/user.svg' %}" style="width: 2.5rem; height: 2.5rem;">
-                    <h4 class="datos_user">{{ user.first_name }}
-                    {{ user.last_name}}</h4>
-                </li>
-                <li class="list-group-item list-group-item-warning">
-                    <img src="{% static 'img/icons_userdata/dni.svg' %}" style="width: 2.5rem; height: 2.5rem;">
-                 <h4 class="datos_user">{{ user.dni}}</h4> 
-                </li>
-                <li class="list-group-item list-group-item-warning">
-                    <img src="{% static 'img/icons_userdata/calendario.svg' %}" style="width: 2.5rem; height: 2.5rem;">
-                     <h4 class="datos_user">{{ user.fecha_nacimiento}} </h4>
-                </li>
-                <li class="list-group-item list-group-item-warning">
-                    <img src="{% static 'img/icons_userdata/correo.svg' %}" style="width: 2.5rem; height: 2.5rem;">
-                    <h4 class="datos_user">{{ user.email}}</h4> 
-                </li>
-                <li class="list-group-item list-group-item-warning">
-                    <img src="{% static 'img/icons_userdata/tel.svg' %}" style="width: 2.5rem; height: 2.5rem;">
-                    <h4 class="datos_user">{{ user.telefono}}</h4>
-                </li>
-            </ul>
-            <br>
-            <a type="button" 
-                    class="btn btn-outline-light float-right"
-                    href="{% url 'editar' user.id %}">EDITAR</a>
-        </div>
+            <div class="card-body">
+
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-warning">
+                        <img src="{% static 'img/icons_userdata/user.svg' %}" style="width: 2.5rem; height: 2.5rem;">
+                        <h4 class="datos_user">{{ user.first_name }}
+                            {{ user.last_name}}</h4>
+                    </li>
+                    <li class="list-group-item list-group-item-warning">
+                        <img src="{% static 'img/icons_userdata/dni.svg' %}" style="width: 2.5rem; height: 2.5rem;">
+                        <h4 class="datos_user">{{ user.dni}}</h4>
+                    </li>
+                    <li class="list-group-item list-group-item-warning">
+                        <img src="{% static 'img/icons_userdata/calendario.svg' %}"
+                             style="width: 2.5rem; height: 2.5rem;">
+                        <h4 class="datos_user">{{ user.fecha_nacimiento}} </h4>
+                    </li>
+                    <li class="list-group-item list-group-item-warning">
+                        <img src="{% static 'img/icons_userdata/correo.svg' %}" style="width: 2.5rem; height: 2.5rem;">
+                        <h4 class="datos_user">{{ user.email}}</h4>
+                    </li>
+                    <li class="list-group-item list-group-item-warning">
+                        <img src="{% static 'img/icons_userdata/tel.svg' %}" style="width: 2.5rem; height: 2.5rem;">
+                        <h4 class="datos_user">{{ user.telefono}}</h4>
+                    </li>
+                </ul>
+                <br>
+                <a type="button"
+                   class="btn btn-outline-light float-right"
+                   href="{% url 'editar' user.id %}">EDITAR</a>
+            </div>
         </div>
     </div>
 </div>

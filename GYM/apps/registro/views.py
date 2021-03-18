@@ -1,6 +1,5 @@
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView
-
 from .forms import *
 from .models import *
 
@@ -14,5 +13,5 @@ class editar_usuario_vista(UpdateView):
 	model = usuario
 	form_class = editar_usuario
 	success_url = reverse_lazy('perfil')
-	template_name =	'registro.html'
+	template_name =	'editar_perfil.html'
 	

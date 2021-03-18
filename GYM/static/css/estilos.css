@@ -124,6 +124,9 @@ h1{
 
 
 /* PERFIL DE USUARIO */
+
+
+
 #perfil{
   margin-top: 30px;
   margin-left: 4rem;
@@ -146,7 +149,14 @@ h1{
   padding-left: 10rem;
 }
 
-/* TURNOS */
+/* 2- Turno */
+
+
+#raw_horario::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
 #dias {
   float: right;
@@ -157,7 +167,7 @@ h1{
 }
 
 #horario_contenido{
-  margin-top: 25px;
+  margin: auto;
   padding: auto;
   overflow-x: auto;
   width: 80%;
