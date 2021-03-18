@@ -3,6 +3,7 @@ from apps.registro.models import *
 
 class actividad(models.Model):   
     nombre = models.CharField(max_length=50, null=False, blank=False, unique=True)
+    nombre_corto = models.CharField(max_length=3, null=False, blank=False, unique=True)
     cupo_max = models.PositiveSmallIntegerField(
         verbose_name='Cupo máximo de personas',
         blank=False,
@@ -47,7 +48,13 @@ class turno(models.Model):
 
     @property
     def nombre(self):
-        pass
+        texto = f'{self.actividad.nombre_corto}_'
+        for i in str(self.fecha).split('-'):
+            texto += ''.join(i)
+        texto += '_'
+        for i in str(self.horario).split(':')[:2]:
+            texto += ''.join(i)
+        return texto
 
     class Meta:
         db_table = 'turnos'
@@ -56,3 +63,5 @@ class turno(models.Model):
         verbose_name_plural = 'turnos'
         unique_together = ('actividad', 'horario', 'fecha')
 
+    def __str__(self):
+        return self.nombre

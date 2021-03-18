@@ -24,6 +24,7 @@ class AdminActividad(admin.ModelAdmin):
     model = actividad
     list_display = (
         'nombre',
+        'nombre_corto',
         'cupo_max',
         'disponible',
         'descripcion',
