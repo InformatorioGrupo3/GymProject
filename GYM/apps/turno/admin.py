@@ -6,12 +6,13 @@ from apps.turno.models import *
 class AdminTurno(admin.ModelAdmin):
     model = turno
     list_display = (
-        'id',
+        'nombre',
         'actividad',
         'fecha',
         'horario',
         'cupo_actual',
         'disponible',
+        'id',
         )
     list_filter = (
         'disponible',
