@@ -3,9 +3,9 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(redirect_field_name='inicio')
 def perfil(request):
-    return render(request, 'perfil.html') # Agregar HTML de perfil para cuando inicia sesion
+    return render(request, 'perfil.html') 
 
-# Create your views here.
+
 def inicio(request):
 	return render(request, 'index.html')
 

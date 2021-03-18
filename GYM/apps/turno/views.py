@@ -16,8 +16,9 @@ class turno_actividad(ListView):
 		return query
 	
 
-class ver_turnos(ListView):
+class ver_turnos_vista(ListView):
 	model = turno
+	form_class = ver_turno
 	template_name = 'turno.html'
 
 
@@ -29,5 +30,6 @@ class ver_actividades(ListView):
 # def turno(request):
 # 	return render(request,'dashboard.html')
 
-# def solicitar_turno(request):
-# 	return render(request,'call_solicitud.html')
+def solicitar_turno(request):
+ 	return render(request,'solicitar_turno.html')
+

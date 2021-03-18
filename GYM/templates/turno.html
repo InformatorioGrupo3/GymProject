@@ -72,16 +72,7 @@
     <button type="button" class="btn btn-light" style="margin-left: 1.9rem;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </button>
     <button type="button" class="btn btn-light" style="margin-left: 1.9rem;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </button></div>
 </div>
-<!-- VER QUE ES ESTO -->
-<div>
-        <h1 class="titulo">TURNOS DISPONIBLES PARA {{ object_list.0.actividad|upper }}</h1>
-        {% for turno in object_list %}
-        <li class="texto">{{ turno.horario }}</li>
-        {% endfor %}
-</div>
-<div>
-    <a class="texto" href="{% url 'turnos' %}" >VOLVER</a>
-</div>
+
 
 {% endblock contenido %}
 

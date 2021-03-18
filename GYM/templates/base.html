@@ -66,11 +66,11 @@
       <li class="nav-item {% if request.path == '/perfil/' %}active{% endif %}" >
         <a class="nav-link" href="{% url 'perfil' %}" id="usuario">PERFIL DE USUARIO</a>
       </li>
-      <li class="nav-item {% if request.path == '#' %}active{% endif %}" >
-        <a class="nav-link" href="#" id="usuario">MIS TURNOS</a>
+      <li class="nav-item {% if request.path == '/turnos/' %}active{% endif %}" >
+        <a class="nav-link" href="{% url 'turnos' %}" id="usuario">MIS TURNOS</a>
       </li>
       <li class="nav-item {% if request.path == '#' %}active{% endif %}" >
-        <a class="nav-link" href="#" id="usuario">SACAR TURNO</a>
+        <a class="nav-link" href="" id="usuario">SACAR TURNO</a>
       </li>
       <li class="nav-item {% if request.path == '#' %}active{% endif %}" >
         <a class="nav-link" href="#" id="usuario">ACTIVIDADES</a>
