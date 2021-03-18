@@ -15,7 +15,7 @@
       		<div class="card-body">
         	
         	{% if form.errors %}
-		<p>El nombre de usuario y contraseña no coinciden. Intente de nuevo.</p>
+		<p id="errores">El nombre de usuario y/o la contraseña no coinciden. Intente de nuevo.</p>
 			{% endif %}
 
 
@@ -48,9 +48,7 @@
 				</div>
 			</div>
 				<br>
-			<button type="button" 
-					class="btn btn-danger float-left"
-					href="{% url 'index' %}">Cancelar</button>
+			<a href="{% url 'index' %}" class="btn btn-danger float-left">Cancelar</a>
         	<button type="submit" 
 					class="btn btn-outline-success float-right">Ingresar</button>		       			
 			</form> 

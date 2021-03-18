@@ -72,8 +72,8 @@
       <li class="nav-item {% if request.path == '#' %}active{% endif %}" >
         <a class="nav-link" href="" id="usuario">SACAR TURNO</a>
       </li>
-      <li class="nav-item {% if request.path == '#' %}active{% endif %}" >
-        <a class="nav-link" href="#" id="usuario">ACTIVIDADES</a>
+      <li class="nav-item {% if request.path == '/actividad/' %}active{% endif %}" >
+        <a class="nav-link" href="{% url 'actividad' %}" id="usuario">ACTIVIDADES</a>
       </li>
     
      
