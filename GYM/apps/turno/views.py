@@ -2,7 +2,10 @@ from django.shortcuts import render
 from django.views.generic import *
 from .forms import *
 from .models import *
+from apps.registro.models import *
 from django.contrib.auth.decorators import login_required
+from django.views.generic.edit import CreateView
+from django.shortcuts import get_object_or_404
 import datetime
 
 
@@ -26,8 +29,7 @@ class fechas_por_actividad(ListView):
     def get_queryset(self):
         query = turno.objects \
             .filter(actividad__nombre=self.kwargs['actividad']) \
-            .filter(fecha__gte=datetime.datetime.today()) \
-            .filter(horario__gte=datetime.datetime.now())
+            .filter(fecha__gte=datetime.datetime.today())
 
         lista_fechas = []
         lista_turnos = []
@@ -47,8 +49,7 @@ class ver_horarios(ListView):
         query = turno.objects \
             .filter(actividad__nombre=self.kwargs['actividad']) \
             .filter(fecha=self.kwargs['turno_fecha']) \
-            .filter(fecha__gte=datetime.datetime.today()) \
-            .filter(horario__gte=datetime.datetime.now())
+            .filter(fecha__gte=datetime.datetime.today())
 
         tabla_intermedia = turno.usuario.through.objects.all()
         turnos_mios = tabla_intermedia.filter(usuario_id=self.request.user.id)
@@ -78,8 +79,7 @@ class mis_turnos(ListView):
         for objeto in turnos_mios:
             lista_ids.append(objeto.turno_id)
         query = turno.objects.filter(id__in=lista_ids) \
-            .filter(fecha__gte=datetime.datetime.today()) \
-            .filter(horario__gte=datetime.datetime.now())
+            .filter(fecha__gte=datetime.datetime.today())
         return query
 
 
@@ -89,5 +89,12 @@ class info_turno(DetailView):
     template_name = 'ver_turno.html'
 
 
-def sacar_turno(request):
-    return render(request, 'sacar_turno.html')
+
+class sacar_turno(CreateView):
+    model = turno.usuario.through
+    template_name = 'inscripto.html'
+    fields = '__all__'
+
+    def form_valid(self, form):
+        form.instance.usuario = self.request.user
+        return super(sacar_turno, self).form_valid(form)

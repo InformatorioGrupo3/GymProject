@@ -10,7 +10,7 @@ class AdminTurno(admin.ModelAdmin):
         'actividad',
         'fecha',
         'horario',
-        'cupo_actual',
+        #'cupo_actual',
         'disponible',
         'id',
         )

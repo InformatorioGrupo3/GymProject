@@ -1,22 +1,26 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block titulo %}TURNO{% endblock titulo %}
+{% block titulo %}ÉXITO{% endblock titulo %}
 
 {% block contenido %}
-<h5 class="titulo">TURNO SELECCIONADO:</h5>
+<h5 class="titulo">TE HAS INSCRIPTO AL SIGUIENTE TURNO:</h5>
 <div>
-    <p class="texto">Actividad: {{ turno.actividad }}</p>
+    <p class="texto">Nombre: {{ user.first_name }}</p>
+    <p class="texto">Apellido: {{ user.last_name }}</p>
+</div>
+<div>
+    <p class="texto">Actividad: {{ turno.id }}</p>
     <p class="texto">Fecha: {{ turno.fecha|date:"l, d" }} de
         {{ turno.fecha|date:"F" }} del
         {{ turno.fecha|date:"Y" }}</p>
     <p class="texto">Hora: {{ turno.horario }}</p>
 </div>
 <div>
-    <a href="{% url 'perfil' %}"
+    <a href="{% url 'mis-turnos' %}"
        class="btn btn-warning my-2 my-sm-0"
        role="button"
        aria-pressed="true">
-        RESERVAR ESTE TURNO
+        VOLVER
     </a>
 </div>
 

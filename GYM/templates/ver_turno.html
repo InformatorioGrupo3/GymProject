@@ -12,11 +12,15 @@
     <p class="texto">Hora: {{ turno.horario }}</p>
 </div>
 <div>
-    <a href="{% url 'perfil' %}"
+    <a href="{% url 'sacar_turno' turno.id user.id%}"
        class="btn btn-warning my-2 my-sm-0"
        role="button"
        aria-pressed="true">
         RESERVAR ESTE TURNO
+    </a>
+    <a type="button"
+       class="btn btn-outline-light float-center"
+       href="{% url 'actividades' %}">VOLVER
     </a>
 </div>
 
