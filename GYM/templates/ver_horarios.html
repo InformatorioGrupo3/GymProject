@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %}HORARIOS{% endblock titulo %}
+
+{% block contenido %}
+<h5 class="titulo">HORARIOS DISPONIBLES PARA {{ lista_turnos.0.actividad|upper }}
+                    EL DÍA {{ lista_turnos.0.fecha|date:"l d/m/Y" }}:</h5>
+<div>
+    {% for turno in lista_turnos %}
+    <li class="texto">
+        <a class="texto" >
+            {{ turno.horario }}
+        </a>
+    </li>
+    {% endfor %}
+</div>
+{% endblock contenido%}

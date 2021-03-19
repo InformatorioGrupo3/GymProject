@@ -4,7 +4,13 @@
 {% block contenido %}
 
   <div class="conteiner-fluid">
-    {{ datos_turno }}
+    {% for objeto in prueba %}
+    <li class="texto">
+        <a class="texto" >
+            {{ objeto.nombre }}
+        </a>
+    </li>
+    {% endfor %}
   </div>
 
 {% endblock contenido %}

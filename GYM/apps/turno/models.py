@@ -58,7 +58,7 @@ class turno(models.Model):
 
     class Meta:
         db_table = 'turnos'
-        ordering = ['actividad', 'horario']
+        ordering = ['fecha', 'horario']
         verbose_name = 'turno'
         verbose_name_plural = 'turnos'
         unique_together = ('actividad', 'horario', 'fecha')

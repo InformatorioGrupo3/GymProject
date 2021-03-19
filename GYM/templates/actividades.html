@@ -7,7 +7,7 @@
 <div>
         {% for actividad in lista_actividades %}
         <li class="texto">
-                <a class="texto" href="{% url 'turnos_actividad' actividad.nombre %}">
+                <a class="texto" href="{% url 'fechas_por_actividad' actividad.nombre %}">
                         {{ actividad }}
                 </a>
         </li>

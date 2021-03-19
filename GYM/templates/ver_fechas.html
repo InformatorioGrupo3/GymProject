@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %}FECHAS{% endblock titulo %}
+
+{% block contenido %}
+<h5 class="titulo">FECHAS DISPONIBLES PARA {{ lista_turnos.0.actividad|upper }}:</h5>
+<div>
+    {% for turno in lista_turnos %}
+    <li class="texto">
+        <a class="texto" href="{% url 'ver_horarios' turno.actividad turno.fecha %}">
+            {{ turno.fecha|date:"l d/m/Y" }}
+        </a>
+    </li>
+    {% endfor %}
+</div>
+{% endblock contenido%}
