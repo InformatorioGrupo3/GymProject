@@ -3,7 +3,8 @@
 {% block titulo %}FECHAS{% endblock titulo %}
 
 {% block contenido %}
-<h5 class="titulo">FECHAS DISPONIBLES PARA {{ lista_turnos.0.actividad|upper }}:</h5>
+{% if lista_turnos %}
+<h5 class="titulo">Fechas disponibles para {{ lista_turnos.0.actividad|upper }}:</h5>
 <div>
     {% for turno in lista_turnos %}
     <li class="texto">
@@ -13,4 +14,7 @@
     </li>
     {% endfor %}
 </div>
+{% else %}
+<h5 class="titulo">NO HAY FECHAS DISPONIBLES PARA ESTA ACTIVIDAD</h5>
+{% endif %}
 {% endblock contenido%}

@@ -3,15 +3,19 @@
 {% block titulo %}HORARIOS{% endblock titulo %}
 
 {% block contenido %}
-<h5 class="titulo">HORARIOS DISPONIBLES PARA {{ lista_turnos.0.actividad|upper }}
-                    EL DÍA {{ lista_turnos.0.fecha|date:"l d/m/Y" }}:</h5>
+{% if lista_turnos %}
+<h5 class="titulo">Horarios disponibles para {{ lista_turnos.0.actividad|upper }}
+    el día {{ lista_turnos.0.fecha|date:"l d/m/Y" }}:</h5>
 <div>
     {% for turno in lista_turnos %}
     <li class="texto">
-        <a class="texto" >
+        <a class="texto" href="{% url 'info_turno' turno.actividad turno.fecha turno.pk %}">
             {{ turno.horario }}
         </a>
     </li>
     {% endfor %}
 </div>
+{% else %}
+<h5 class="titulo">NO HAY HORARIOS DISPONIBLES PARA ESTA ACTIVIDAD EN ESTE DÍA</h5>
+{% endif %}
 {% endblock contenido%}

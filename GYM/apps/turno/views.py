@@ -72,17 +72,11 @@ class mis_turnos(ListView):
         query = turno.objects.filter(id__in=lista_ids)
         return query
 
-
-class prueba(ListView):
+class info_turno(DetailView):
     model = turno
-    context_object_name = 'prueba'
-    template_name = 'prueba.html'
-
-    def get_queryset(self):
-        query = turno.objects \
-            .filter(actividad__cupo_max__gte=3)
-        return query
+    context_object_name = 'turno'
+    template_name = 'ver_turno.html'
 
 
-def solicitar_turno(request):
-    return render(request, 'solicitar_turno.html')
+def sacar_turno(request):
+    return render(request, 'sacar_turno.html')

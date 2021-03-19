@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %}TURNO{% endblock titulo %}
+
+{% block contenido %}
+<h5 class="titulo">TURNO SELECCIONADO:</h5>
+<div>
+    <p class="texto">Actividad: {{ turno.actividad }}</p>
+    <p class="texto">Fecha: {{ turno.fecha|date:"l, d" }} de
+        {{ turno.fecha|date:"F" }} del
+        {{ turno.fecha|date:"Y" }}</p>
+    <p class="texto">Hora: {{ turno.horario }}</p>
+
+</div>
+{% endblock contenido%}
