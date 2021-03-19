@@ -10,6 +10,13 @@
         {{ turno.fecha|date:"F" }} del
         {{ turno.fecha|date:"Y" }}</p>
     <p class="texto">Hora: {{ turno.horario }}</p>
-
 </div>
+<div>
+    <a href="{% url 'perfil' %}"
+       class="btn btn-warning my-2 my-sm-0"
+       role="button"
+       aria-pressed="true">RESERVAR ESTE TURNO
+    </a>
+</div>
+
 {% endblock contenido%}
