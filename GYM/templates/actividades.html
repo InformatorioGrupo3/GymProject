@@ -5,14 +5,12 @@
 {% block contenido %}
 <h5 class="titulo">BUSCAR TURNOS POR ACTIVIDAD:</h5>
 <div>
-        {% for actividad in object_list %}
-        {% if actividad.disponible %}
+        {% for actividad in lista_actividades %}
         <li class="texto">
-                <a class="texto" href="{% url 'turno_actividad' actividad.nombre %}">
+                <a class="texto" href="{% url 'turnos_actividad' actividad.nombre %}">
                         {{ actividad }}
                 </a>
         </li>
-        {% endif %}
         {% endfor %}
 </div>
 {% endblock contenido%}

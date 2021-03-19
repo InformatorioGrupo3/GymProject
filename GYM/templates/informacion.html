@@ -3,174 +3,179 @@
 {% block titulo %}INFORMACIÓN{% endblock titulo %}
 
 
-{% block contenido %} 
+{% block contenido %}
 
 
-    <h1 class="titulo text-center">NUESTRAS ACTIVIDADES</h1>
+<h1 class="titulo text-center">NUESTRAS ACTIVIDADES</h1>
 
 <div id="contenido_carrousel">
-  <div
-    id="carouselBasicExample"
-    class="carousel slide carousel-fade"
-    data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#carouselBasicExample" 
-          data-slide-to="0" 
-          class="active">
-      </li>
-      <li data-target="#carouselBasicExample" 
-          data-slide-to="1">
-      </li>
-      <li data-target="#carouselBasicExample" 
-          data-slide-to="2">
-      </li>
-    </ol>
+    <div
+            id="carouselBasicExample"
+            class="carousel slide carousel-fade"
+            data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carouselBasicExample"
+                data-slide-to="0"
+                class="active">
+            </li>
+            <li data-target="#carouselBasicExample"
+                data-slide-to="1">
+            </li>
+            <li data-target="#carouselBasicExample"
+                data-slide-to="2">
+            </li>
+            <li data-target="#carouselBasicExample"
+                data-slide-to="3">
+            </li>
+        </ol>
 
-    <!-- Inner -->
-    <div class="carousel-inner">
-      <!-- Single item -->
-      <div class="carousel-item active">
-        <p class="texto text-center">
-            FUNCIONAL
-        </p>
-        <p class="texto text-center">
-          Entrenamiento personalizado 
-          centrado en tus metas y 
-          destinado a mejorar tu calidad de vida
-        </p>
-        <img src="{% static 'img/funcional1.jpg' %}"
-             class="d-block w-100"
-             alt="actividad"/>
-      </div>
+        <!-- Inner -->
+        <div class="carousel-inner">
+            <!-- Single item -->
+            <div class="carousel-item active">
+                <p class="texto text-center">
+                    FUNCIONAL
+                </p>
+                <p class="texto text-center">
+                    Entrenamiento personalizado
+                    centrado en tus metas y
+                    destinado a mejorar tu calidad de vida
+                </p>
+                <img src="{% static 'img/funcional1.jpg' %}"
+                     class="d-block w-100"
+                     alt="actividad"/>
+            </div>
 
-      <!-- Single item -->
-      <div class="carousel-item">
-        <p class="texto text-center">
-            SPINNING
-        </p>
-        <p class="texto text-center">
-            Trabajo aeróbico de alta intensidad sobre bicicleta fija, coreografiado
-        </p>
-        <img src="{% static 'img/spinning1.jpg' %}"
-          class="d-block w-100"
-          alt="actividad"/>
-      </div>
+            <!-- Single item -->
+            <div class="carousel-item">
+                <p class="texto text-center">
+                    SPINNING
+                </p>
+                <p class="texto text-center">
+                    Trabajo aeróbico de alta intensidad sobre bicicleta fija, coreografiado
+                </p>
+                <img src="{% static 'img/spinning1.jpg' %}"
+                     class="d-block w-100"
+                     alt="actividad"/>
+            </div>
 
-      <!-- Single item -->
-      <div class="carousel-item">
-        <p class="texto text-center">
-            MUSCULACION
-        </p>
-        <p class="texto text-center">
-            Se busca no sólo moldear la figura, sino lograr un estado totalmente saludable
-        </p>
-        <img src="{% static 'img/musculacion1.jpg' %}"
-          class="d-block w-100"
-          alt="actividad"/>
-      </div>
+            <!-- Single item -->
+            <div class="carousel-item">
+                <p class="texto text-center">
+                    MUSCULACION
+                </p>
+                <p class="texto text-center">
+                    Se busca no sólo moldear la figura, sino lograr un estado totalmente saludable
+                </p>
+                <img src="{% static 'img/musculacion1.jpg' %}"
+                     class="d-block w-100"
+                     alt="actividad"/>
+            </div>
 
 
-      <div class="carousel-item">
-        <p class="texto text-center">
-            ZUMBA
-        </p>
-        <p class="texto text-center">
-            Cada clase de Zumba está diseñada para juntarnos a bailar y sudar
-        </p>
-        <img src="{% static 'img/zumba.jpg' %}"
-        class="d-block w-100"
-        alt="actividad"/>
-      </div>
+            <div class="carousel-item">
+                <p class="texto text-center">
+                    ZUMBA
+                </p>
+                <p class="texto text-center">
+                    Cada clase de Zumba está diseñada para juntarnos a bailar y sudar
+                </p>
+                <img src="{% static 'img/zumba.jpg' %}"
+                     class="d-block w-100"
+                     alt="actividad"/>
+            </div>
+        </div>
+
+        <!-- End Inner -->
+
+        <!-- Controls -->
+        <a class="carousel-control-prev"
+           href="#carouselBasicExample"
+           role="button"
+           data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next"
+           href="#carouselBasicExample"
+           role="button"
+           data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+
     </div>
-
-    <!-- End Inner -->
-
-    <!-- Controls -->
-    <a class="carousel-control-prev"
-       href="#carouselBasicExample"
-       role="button"
-       data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next"
-       href="#carouselBasicExample"
-       role="button"
-       data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-
-  </div>
 </div>
 
 
 <div class="container-fluid" id="cont_bioseguridad">
-  <br><br>
-  <h2 class="texto text-center">PROTOCOLOS DE BIOSEGURIDAD</h2>
-  <p class="texto text-center">
-  ¡Tu bienestar es lo primero! Por eso, cuando vengas a entrenar, 
-    recuerda las siguientes medidas para disfrutar del gimnasio con seguridad.
-  </p>
+    <br><br>
+    <h2 class="texto text-center">PROTOCOLOS DE BIOSEGURIDAD</h2>
+    <p class="texto text-center">
+        ¡Tu bienestar es lo primero! Por eso, cuando vengas a entrenar,
+        recuerda las siguientes medidas para disfrutar del gimnasio con seguridad.
+    </p>
 </div>
 
 <div class="conteiner-fluid">
-     <div class="row text-center mx-0">
-      <div class="col">
-        <img src="{% static 'img/icons/bioseguridad.png' %}">
-        <p class="texto">Agenda previamente tu día y horario de entrenamiento.</p>
-      </div>
-      <div class="col">
-        <img src="{% static 'img/icons/shoes.png' %}">
-        <p class="texto">Higieniza tu calzado en el tapete<br>
-       especial a la entrada de la sede.</p>
-      </div>
-      <div class="col">
-        <img src="{% static 'img/icons/temperatura.png' %}">
-        <p class="texto">Toma de temperatura al ingresar a<br>
-      la sede. Quienes presenten<br>
-      registros iguales o superiores a<br>37,5, no podrán ingresar.</p>
-      </div>
-      <div class="col">
-         <img src="{% static 'img/icons/higiene.png' %}">
-        <p class="texto">Higienización de espacios después <br>
-      de cada grupo de entrenamiento.</p>
-      </div>
-  </div>
-   <div class="row text-center mx-0">
-      <div class="col">
-        <img src="{% static 'img/icons/bebederos.png' %}">
-        <p class="texto">Los bebederos estarán desactivados. Por favor trae tu termo o botella de agua.</p>      
-      </div>
-      <div class="col">
-        <img src="{% static 'img/icons/toalla.png' %}">
-        <p class="texto">Para el ingreso debes traer tu toalla personal por requerimiento gubernamental.</p>    
-      </div>
-      <div class="col">
-        <img src="{% static 'img/icons/alcohol.png' %}">
-        <p class="texto">Mantendremos disponible alcohol en gel en puntos específicos de la sede.</p>    
-      </div>
-      <div class="col">
-        <img src="{% static 'img/icons/fuertes.png' %}">
-        <p class="texto">Nuestra principal motivación es cuidar tu salud. Juntos somos más fuertes.</p>   
-      </div>
+    <div class="row text-center mx-0">
+        <div class="col">
+            <img src="{% static 'img/icons/bioseguridad.png' %}">
+            <p class="texto">Agenda previamente tu día y horario de entrenamiento.</p>
+        </div>
+        <div class="col">
+            <img src="{% static 'img/icons/shoes.png' %}">
+            <p class="texto">Higieniza tu calzado en el tapete<br>
+                especial a la entrada de la sede.</p>
+        </div>
+        <div class="col">
+            <img src="{% static 'img/icons/temperatura.png' %}">
+            <p class="texto">Toma de temperatura al ingresar a<br>
+                la sede. Quienes presenten<br>
+                registros iguales o superiores a<br>37,5, no podrán ingresar.</p>
+        </div>
+        <div class="col">
+            <img src="{% static 'img/icons/higiene.png' %}">
+            <p class="texto">Higienización de espacios después <br>
+                de cada grupo de entrenamiento.</p>
+        </div>
     </div>
     <div class="row text-center mx-0">
-      <div class="col">
-        <img src="{% static 'img/icons/barbijo.png' %}">
-        <p class="texto">Para el ingreso y todo tu entrenamiento debes tener tapabocas por requerimiento gubernamental.</p>
-      </div>
-      <div class="col">
-        <img src="{% static 'img/icons/manos.png' %}">
-        <p class="texto">Lava bien tus manos con agua y<br>
-       jabón, luego aplícate alcohol<br>
-       glicerinado al 70%. No compartas tus objetos personales.</p>     
-      </div>
-      <div class="col">
-        <img src="{% static 'img/icons/operacion.png' %}">
-        <p class="texto">Operación con una cantidad reducida de equipos para respetar la distancia entre personas.</p>     
-      </div>
+        <div class="col">
+            <img src="{% static 'img/icons/bebederos.png' %}">
+            <p class="texto">Los bebederos estarán desactivados. Por favor trae tu termo o botella de agua.</p>
+        </div>
+        <div class="col">
+            <img src="{% static 'img/icons/toalla.png' %}">
+            <p class="texto">Para el ingreso debes traer tu toalla personal por requerimiento gubernamental.</p>
+        </div>
+        <div class="col">
+            <img src="{% static 'img/icons/alcohol.png' %}">
+            <p class="texto">Mantendremos disponible alcohol en gel en puntos específicos de la sede.</p>
+        </div>
+        <div class="col">
+            <img src="{% static 'img/icons/fuertes.png' %}">
+            <p class="texto">Nuestra principal motivación es cuidar tu salud. Juntos somos más fuertes.</p>
+        </div>
+    </div>
+    <div class="row text-center mx-0">
+        <div class="col">
+            <img src="{% static 'img/icons/barbijo.png' %}">
+            <p class="texto">Para el ingreso y todo tu entrenamiento debes tener tapabocas por requerimiento
+                gubernamental.</p>
+        </div>
+        <div class="col">
+            <img src="{% static 'img/icons/manos.png' %}">
+            <p class="texto">Lava bien tus manos con agua y<br>
+                jabón, luego aplícate alcohol<br>
+                glicerinado al 70%. No compartas tus objetos personales.</p>
+        </div>
+        <div class="col">
+            <img src="{% static 'img/icons/operacion.png' %}">
+            <p class="texto">Operación con una cantidad reducida de equipos para respetar la distancia entre
+                personas.</p>
+        </div>
     </div>
 </div>
 

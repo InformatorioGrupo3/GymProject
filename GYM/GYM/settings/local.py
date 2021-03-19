@@ -61,3 +61,4 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')
 AUTH_USER_MODEL = 'registro.usuario'
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'index'
+LOGIN_URL = '/login/login/'

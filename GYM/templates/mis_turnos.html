@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %}MIS TURNOS{% endblock titulo %}
+
+{% block contenido %}
+<h5 class="titulo">TURNOS EN LOS QUE TE HAS INSCRIPTO:</h5>
+<div>
+    {% for turno in mis_turnos %}
+    <li class="texto">
+            {{ turno.actividad }} - {{ turno.fecha }} - {{ turno.horario }}
+    </li>
+    {% endfor %}
+</div>
+{% endblock contenido%}
