@@ -12,6 +12,7 @@ class ver_actividades(ListView):
     template_name = 'actividades.html'
     queryset = actividad.objects.filter(disponible=True)
 
+
 ## PRUEBA PARA VER LOS TEMPLATES
 # def turno(request):
 # 	return render(request,'dashboard.html')
@@ -49,10 +50,17 @@ class ver_horarios(ListView):
             .filter(fecha__gte=datetime.datetime.today()) \
             .filter(horario__gte=datetime.datetime.now())
 
+        tabla_intermedia = turno.usuario.through.objects.all()
+        turnos_mios = tabla_intermedia.filter(usuario_id=self.request.user.id)
+        lista_ids = []
+        for objeto in turnos_mios:
+            lista_ids.append(objeto.turno_id)
+        turnos_inscripto = turno.objects.filter(id__in=lista_ids)
+
         lista_horarios = []
         lista_turnos = []
         for turno1 in query:
-            if turno1.horario not in lista_horarios:
+            if (turno1.horario not in lista_horarios) and (turno1 not in turnos_inscripto):
                 lista_horarios.append(turno1.horario)
                 lista_turnos.append(turno1)
         return lista_turnos
@@ -69,8 +77,11 @@ class mis_turnos(ListView):
         lista_ids = []
         for objeto in turnos_mios:
             lista_ids.append(objeto.turno_id)
-        query = turno.objects.filter(id__in=lista_ids)
+        query = turno.objects.filter(id__in=lista_ids) \
+            .filter(fecha__gte=datetime.datetime.today()) \
+            .filter(horario__gte=datetime.datetime.now())
         return query
+
 
 class info_turno(DetailView):
     model = turno
