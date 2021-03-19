@@ -89,12 +89,7 @@ class info_turno(DetailView):
     template_name = 'ver_turno.html'
 
 
-
 class sacar_turno(CreateView):
     model = turno.usuario.through
     template_name = 'inscripto.html'
     fields = '__all__'
-
-    def form_valid(self, form):
-        form.instance.usuario = self.request.user
-        return super(sacar_turno, self).form_valid(form)
